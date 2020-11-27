@@ -1,15 +1,19 @@
-// import React, { useContext, useState } from 'react';
-import React from 'react';
+import React, { useContext } from 'react';
+// import React from 'react';
 // import { Link } from 'react-router-dom';
-// import { UserContext } from '../../../UserContext';
+import { UserContext } from '../../../UserContext';
 
 import styles from './LoggedHome.module.css';
 
+import Tab1 from '../../components/Tab1/Tab1';
+
 const LoggedHome = () => {
+
+    const {windowHeight} = useContext(UserContext);
 
     return (
         <>
-        <section className={["container-fluid", styles.section].join(' ')}>
+        <section className={["container-fluid", styles.section].join(' ')} style={{minHeight: windowHeight}}>
         
             <ul className="nav nav-tabs" id="myTab" role="tablist">
                 <li className="nav-item" role="presentation">
@@ -74,7 +78,7 @@ const LoggedHome = () => {
                 </li>
             </ul>
 
-            <div className="tab-content" id="myTabContent">
+            <div className={["tab-content", styles.tabContent].join(' ')} id="myTabContent">
 
                 <div 
                     className="tab-pane fade show active" 
@@ -82,7 +86,7 @@ const LoggedHome = () => {
                     role="tabpanel" 
                     aria-labelledby="consultant-tab"
                 >
-                    consultant informations
+                    <Tab1/>
                 </div>
 
                 <div 
