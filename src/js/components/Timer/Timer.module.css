@@ -1,0 +1,16 @@
+.minutes {
+    /* background-color: blue; */
+    color: black;
+    padding: 5px;
+    font-size: 3rem;
+}
+.colone {
+    color: black;
+    font-size: 3rem;
+}
+.seconds {
+    /* background-color: black; */
+    color: black;
+    padding: 5px;
+    font-size: 3rem;
+}

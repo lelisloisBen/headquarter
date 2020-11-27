@@ -1,0 +1,55 @@
+.section {
+   padding-top: 80px;
+    background-color: #eeeeee;
+}
+.headerPage span {
+     text-align: left;
+}
+.available {
+    color: #7CD1F9;
+    font-size: 3rem;
+    border-radius: 100%;
+    background-color: black;
+}
+.noavailable {
+    width: 70%;
+    opacity: 0.3;
+}
+.icon_noavailable {
+    color: red;
+    font-size: 3rem;
+}
+.machineName {
+    color: #000000;
+    font-weight: bold;
+}
+.machinChoice:hover {
+    opacity: 0.5;
+}
+.btnIwash {
+    margin: 10px;
+    background-color: #7CD1F9;
+    color: #000000;
+    padding: 10px;
+    border-radius: 100px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.btnIwash:hover {
+    background-color: #BBD5E4;
+    text-decoration: none;
+}
+.number {
+    font-size: 2rem;
+    background-color: #7CD1F9;
+    color: #000000;
+    border: 1px solid #000000;
+}
+.links {
+    text-decoration: none;
+    color: #000000;
+}
+.links:hover {
+    text-decoration: none!important;
+    color: #000000;
+}

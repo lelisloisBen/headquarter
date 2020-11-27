@@ -1,0 +1,29 @@
+.section {
+    padding-top: 80px;
+    background-color: #eeeeee;
+}
+.white {
+    background-color: white;
+    border-radius: 4px;
+    padding-bottom: 10px;
+}
+.btnBlue {
+    background-color: #7CD1F9!important;
+    border-color: #BBD5E4!important;
+    color: #000000!important;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.btnBlue:hover {
+    background-color: #9BDCFA!important;
+}
+.myCredit {
+    background-color: #7CD1F9!important;
+    padding: 2px;
+    padding: 20px;
+    font-size: 3rem;
+    border-radius: 100px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
