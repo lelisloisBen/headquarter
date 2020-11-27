@@ -3,17 +3,19 @@ import React from 'react';
 
 const Tab2 = () => {
     return (
-        <div className="container">
+        <div className="container py-3">
             <h1>Add Consultant</h1>
 
             <div className="form-row">
+
                 <div className="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" className="form-control" id="inputEmail4" />
+                    <label for="inputFirstname">First Name</label>
+                    <input type="text" className="form-control" id="inputFirstname" name="name" />
                 </div>
+
                 <div className="form-group col-md-6">
-                <label for="inputPassword4">Password</label>
-                <input type="password" className="form-control" id="inputPassword4" />
+                    <label for="inputLastname">Last Name</label>
+                    <input type="text" className="form-control" id="inputLastname" name="name" />
                 </div>
             </div>
             <div className="form-group">

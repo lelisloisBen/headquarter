@@ -6,7 +6,7 @@ const Footer = () => {
       <footer className={styles.footer}>
          <div className="container">
             <p> 
-               © 2020 Haedquarter. All Rights Reserved | Design by Samir Benzada
+               © 2020 Headquarter, DataVault LLC. All Rights Reserved
             </p>
          </div>
       </footer>

@@ -1,11 +1,11 @@
 .footer {
-    background: rgb(0, 0, 0);
+    background-color: white;
 }
 .footer p {
-    padding: 2em 0;
-    text-align: left;
+    padding: 1em 0;
+    text-align: center;
     font-size: 14px;
-    color: #fff;
+    color: black;
     letter-spacing: 2px;
-    font-weight: 100;
+    font-weight: bold;
 }
