@@ -7,6 +7,9 @@ import styles from './LoggedHome.module.css';
 
 import Tab1 from '../../components/Tab1/Tab1';
 import Tab2 from '../../components/Tab2/Tab2';
+import Tab3 from '../../components/Tab3/Tab3';
+import Tab4 from '../../components/Tab4/Tab4';
+import Tab5 from '../../components/Tab5/Tab5';
 
 const LoggedHome = () => {
 
