@@ -33,7 +33,7 @@ const LoggedHome = () => {
                         aria-controls="addNewConsultant" 
                         aria-selected="false"
                     >
-                        + Consultant
+                        Add Consultant
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">
