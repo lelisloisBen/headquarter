@@ -61,7 +61,7 @@ const LoggedHome = () => {
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">
-                    <a  className={["nav-link", styles.tab4Color].join(' ')} 
+                    <a  className={["nav-link", styles.tab5Color].join(' ')} 
                         id="board-tab" 
                         data-toggle="tab" 
                         href="#board" 
