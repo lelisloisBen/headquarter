@@ -3,7 +3,7 @@ import React from 'react';
 
 const Tab2 = () => {
     return (
-        <>
+        <div className="container">
             <h1>Add Consultant</h1>
 
             <div className="form-row">
@@ -50,7 +50,7 @@ const Tab2 = () => {
                 </div>
             </div>
             <button type="submit" className="btn btn-primary">Sign in</button>
-        </>
+        </div>
     )
 };
 
