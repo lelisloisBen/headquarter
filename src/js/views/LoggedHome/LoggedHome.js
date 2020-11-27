@@ -49,7 +49,7 @@ const LoggedHome = () => {
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">
-                    <a  className={["nav-link", styles.tab3Color].join(' ')} 
+                    <a  className={["nav-link", styles.tab4Color].join(' ')} 
                         id="employees-tab" 
                         data-toggle="tab" 
                         href="#employees" 
@@ -58,6 +58,18 @@ const LoggedHome = () => {
                         aria-selected="false"
                     >
                         Employees
+                    </a>
+                </li>
+                <li className="nav-item" role="presentation">
+                    <a  className={["nav-link", styles.tab4Color].join(' ')} 
+                        id="board-tab" 
+                        data-toggle="tab" 
+                        href="#board" 
+                        role="tab" 
+                        aria-controls="board" 
+                        aria-selected="false"
+                    >
+                        Board of Directors
                     </a>
                 </li>
             </ul>
@@ -98,6 +110,15 @@ const LoggedHome = () => {
                     aria-labelledby="employees-tab"
                 >
                     Employees infos
+                </div>
+
+                <div 
+                    className="tab-pane fade" 
+                    id="board" 
+                    role="tabpanel" 
+                    aria-labelledby="board-tab"
+                >
+                    board of directors informations
                 </div>
 
             </div> 

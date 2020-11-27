@@ -16,6 +16,16 @@
     color: black;
     font-weight: bold;
 }
+.tab4Color {
+    background-color: orange;
+    color: black;
+    font-weight: bold;
+}
+.tab5Color {
+    background-color: lightblue;
+    color: black;
+    font-weight: bold;
+}
 .btnIwash {
     margin: 10px;
     background-color: #7CD1F9;
