@@ -6,6 +6,7 @@ import { UserContext } from '../../../UserContext';
 import styles from './LoggedHome.module.css';
 
 import Tab1 from '../../components/Tab1/Tab1';
+import Tab2 from '../../components/Tab2/Tab2';
 
 const LoggedHome = () => {
 
@@ -95,7 +96,7 @@ const LoggedHome = () => {
                     role="tabpanel" 
                     aria-labelledby="addNewConsultant-tab"
                 >
-                    add New Consultant
+                    <Tab2/>
                 </div>
 
                 <div 
@@ -104,7 +105,7 @@ const LoggedHome = () => {
                     role="tabpanel" 
                     aria-labelledby="newInterview-tab"
                 >
-                    New Interview Form
+                    <Tab3/>
                 </div>
 
                 <div 
@@ -113,7 +114,7 @@ const LoggedHome = () => {
                     role="tabpanel" 
                     aria-labelledby="employees-tab"
                 >
-                    Employees infos
+                    <Tab4/>
                 </div>
 
                 <div 
@@ -122,7 +123,7 @@ const LoggedHome = () => {
                     role="tabpanel" 
                     aria-labelledby="board-tab"
                 >
-                    board of directors informations
+                    <Tab5/>
                 </div>
 
             </div> 
