@@ -4,7 +4,7 @@ import { UserContext } from '../../../UserContext';
 import styles from './Login.module.css';
 import swal from 'sweetalert';
 
-import coin from '../../../img/coin.png';
+import vault from '../../../img/vault.png';
 
 const Login = () => {
 
@@ -77,7 +77,7 @@ const Login = () => {
 
     return (
         <section className={styles.section} >
-                <a href="/"><img className={styles.coin} src={coin} alt="coin"/></a> 
+                <a href="/"><img className={styles.coin} src={vault} alt="coin"/></a> 
                 <br/>
                 <input 
                     className={styles.inputForm} 

@@ -9,7 +9,7 @@ const Footer = () => {
                <div className="row top-gap">
                   <div className="col-md-7 header-side">
                      <p> 
-                        © 2019 iWash. All Rights Reserved | Design by Samir &amp; Victor
+                        © 2019 iWash. All Rights Reserved | Design by Samir
                      </p>
                   </div>
                   <div className="col-md-5 header-side">
