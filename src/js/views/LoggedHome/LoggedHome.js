@@ -26,14 +26,14 @@ const LoggedHome = () => {
                 </li>
                 <li className="nav-item" role="presentation">
                     <a  className={["nav-link", styles.tab2Color].join(' ')} 
-                        id="profile-tab" 
+                        id="addNewConsultant-tab" 
                         data-toggle="tab" 
-                        href="#profile" 
+                        href="#addNewConsultant" 
                         role="tab" 
-                        aria-controls="profile" 
+                        aria-controls="addNewConsultant" 
                         aria-selected="false"
                     >
-                        Profile
+                        + Consultant
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">
@@ -63,11 +63,11 @@ const LoggedHome = () => {
 
                 <div 
                     className="tab-pane fade" 
-                    id="profile" 
+                    id="addNewConsultant" 
                     role="tabpanel" 
-                    aria-labelledby="profile-tab"
+                    aria-labelledby="addNewConsultant-tab"
                 >
-                    tab 2
+                    add New Consultant
                 </div>
 
                 <div 
