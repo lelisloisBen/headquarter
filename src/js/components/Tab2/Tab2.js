@@ -3,29 +3,33 @@ import React from 'react';
 
 const Tab2 = () => {
     return (
-        <div className="container py-3">
+        <div className="container py-5">
             <h1>Add Consultant</h1>
 
             <div className="form-row">
 
                 <div className="form-group col-md-6">
                     <label for="inputFirstname">First Name</label>
-                    <input type="text" className="form-control" id="inputFirstname" name="name" />
+                    <input type="text" className="form-control" id="inputFirstname" name="firstname" />
                 </div>
 
                 <div className="form-group col-md-6">
                     <label for="inputLastname">Last Name</label>
-                    <input type="text" className="form-control" id="inputLastname" name="name" />
+                    <input type="text" className="form-control" id="inputLastname" name="lastname" />
                 </div>
+
             </div>
+
             <div className="form-group">
                 <label for="inputAddress">Address</label>
                 <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" />
             </div>
+
             <div className="form-group">
                 <label for="inputAddress2">Address 2</label>
                 <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" />
             </div>
+
             <div className="form-row">
                 <div className="form-group col-md-6">
                 <label for="inputCity">City</label>
