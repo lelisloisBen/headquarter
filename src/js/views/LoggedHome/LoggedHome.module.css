@@ -1,6 +1,21 @@
 .section {
    padding-top: 80px;
 }
+.tab1Color {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+.tab2Color {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+.tab3Color {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
 .btnIwash {
     margin: 10px;
     background-color: #7CD1F9;
