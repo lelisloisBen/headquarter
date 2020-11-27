@@ -38,14 +38,26 @@ const LoggedHome = () => {
                 </li>
                 <li className="nav-item" role="presentation">
                     <a  className={["nav-link", styles.tab3Color].join(' ')} 
-                        id="contact-tab" 
+                        id="newInterview-tab" 
                         data-toggle="tab" 
-                        href="#contact" 
+                        href="#newInterview" 
                         role="tab" 
-                        aria-controls="contact" 
+                        aria-controls="newInterview" 
                         aria-selected="false"
                     >
-                        Contact
+                        New Interview
+                    </a>
+                </li>
+                <li className="nav-item" role="presentation">
+                    <a  className={["nav-link", styles.tab3Color].join(' ')} 
+                        id="employees-tab" 
+                        data-toggle="tab" 
+                        href="#employees" 
+                        role="tab" 
+                        aria-controls="employees" 
+                        aria-selected="false"
+                    >
+                        Employees
                     </a>
                 </li>
             </ul>
@@ -72,11 +84,20 @@ const LoggedHome = () => {
 
                 <div 
                     className="tab-pane fade" 
-                    id="contact" 
+                    id="newInterview" 
                     role="tabpanel" 
-                    aria-labelledby="contact-tab"
+                    aria-labelledby="newInterview-tab"
                 >
-                    tab 3
+                    New Interview Form
+                </div>
+
+                <div 
+                    className="tab-pane fade" 
+                    id="employees" 
+                    role="tabpanel" 
+                    aria-labelledby="employees-tab"
+                >
+                    Employees infos
                 </div>
 
             </div> 
