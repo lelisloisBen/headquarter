@@ -39,6 +39,10 @@ const Tab2 = () => {
         years.push(<option key={i} value={i}>{i}</option>)
     }
 
+    const submitForm = () => {
+        console.log("hey");
+    }
+
     return (
         <div className="container py-5">
             <h1 className="text-center">New Consultant Form</h1>
@@ -285,9 +289,10 @@ const Tab2 = () => {
                     <label for="bankRouting">Routing Number</label>
                     <input 
                         className="form-control" 
-                        type="number" 
+                        type="text" 
                         id="bankRouting" 
                         placeholder="267084131"
+                        maxLength="12"
                         value={c_routing} 
                         onChange={(e) => setc_routing(e.target.value)}
                     />
@@ -296,10 +301,10 @@ const Tab2 = () => {
                     <label for="bankAccount">Account Number</label>
                     <input 
                         className="form-control" 
-                        type="number" 
+                        type="text" 
                         id="bankAccount" 
                         placeholder="000034986475"
-                        maxlength="12"
+                        maxLength="12"
                         value={c_account} 
                         onChange={(e) => setc_account(e.target.value)}
                     />
@@ -309,6 +314,7 @@ const Tab2 = () => {
             <button 
                 type="submit" 
                 className="btn btn-primary"
+                onClick={submitForm}
             >
                 Save Consultant
             </button>
