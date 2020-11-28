@@ -11,12 +11,21 @@ const Tab2 = () => {
     const [consultantByear, setconsultantByear] = useState('Select a Year');
     const FullBirthdate = consultantBmonth + ' ' + consultantBday + ', ' + consultantByear;
 
-    // const [c_gender, setc_gender] = useState('');
+    const [c_gender, setc_gender] = useState('Select a Gender');
 
-    // const [c_address, setc_address] = useState('');
-    // const [c_city, setc_city] = useState('');
-    // const [c_state, setc_state] = useState('');
-    // const [c_zip, setc_zip] = useState('');
+    const [c_address, setc_address] = useState('');
+    const [c_city, setc_city] = useState('');
+    const [c_state, setc_state] = useState('Select a State');
+    const [c_zip, setc_zip] = useState('');
+
+    const [c_persEmail, setc_persEmail] = useState('');
+    const [c_workEmail, setc_workEmail] = useState('');
+    const [c_phone, setc_phone] = useState('');
+    const [c_skypeID, setc_skypeID] = useState('');
+
+    const [c_bank, setc_bank] = useState('');
+    const [c_routing, setc_routing] = useState('');
+    const [c_account, setc_account] = useState('');
 
     const days = [];
     for (let i=1; i<32; i++) {
@@ -100,8 +109,8 @@ const Tab2 = () => {
 
                 <div className="form-group col-md-6">
                     <label for="inputGender">Gender</label>
-                    <select class="form-control" id="inputGender">
-                        <option value="" selected="selected">Select a Gender</option>
+                    <select class="form-control" id="inputGender" onChange={(e) => setc_gender(e.target.value)}>
+                        <option value="" selected="selected">{c_gender}</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
@@ -115,7 +124,9 @@ const Tab2 = () => {
                     type="text" 
                     className="form-control" 
                     id="inputAddress" 
-                    placeholder="1234 Main St Apartment 501" 
+                    placeholder="1234 Main St Apartment 501"
+                    value={c_address} 
+                    onChange={(e) => setc_address(e.target.value)}
                 />
             </div>
 
@@ -127,12 +138,14 @@ const Tab2 = () => {
                         className="form-control" 
                         id="inputCity"
                         placeholder="Miami Beach"
+                        value={c_city} 
+                        onChange={(e) => setc_city(e.target.value)}
                     />
                 </div>
                 <div className="form-group col-md-4">
                     <label for="inputState">State</label>
-                    <select className="form-control" name="state" id="inputState">
-                        <option value="" selected="selected">Select a State</option>
+                    <select className="form-control" name="state" id="inputState" onChange={(e) => setc_state(e.target.value)}>
+                        <option value="" selected="selected">{c_state}</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -193,6 +206,8 @@ const Tab2 = () => {
                         className="form-control" 
                         id="inputZip" 
                         placeholder="33139"
+                        value={c_zip} 
+                        onChange={(e) => setc_zip(e.target.value)}
                     />
                 </div>
             </div>
@@ -206,6 +221,8 @@ const Tab2 = () => {
                         className="form-control" 
                         id="inputPersoEmail"  
                         placeholder="name@gmail.com"
+                        value={c_persEmail} 
+                        onChange={(e) => setc_persEmail(e.target.value)}
                     />
                 </div>
 
@@ -216,6 +233,8 @@ const Tab2 = () => {
                         className="form-control" 
                         id="inputConsultantEmail" 
                         placeholder="firstname.lastname@datavault.com"
+                        value={c_workEmail} 
+                        onChange={(e) => setc_workEmail(e.target.value)}
                     />
                 </div>
 
@@ -232,6 +251,8 @@ const Tab2 = () => {
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         required 
                         placeholder="(123)456-7890"
+                        value={c_phone} 
+                        onChange={(e) => setc_phone(e.target.value)}
                     />
                 </div>
                 <div className="form-group col-md-6">
@@ -242,6 +263,8 @@ const Tab2 = () => {
                         id="skype" 
                         name="skype"
                         placeholder="live:skypeID"
+                        value={c_skypeID} 
+                        onChange={(e) => setc_skypeID(e.target.value)}
                     />
                 </div>
             </div>
@@ -254,6 +277,8 @@ const Tab2 = () => {
                         type="text" 
                         id="bank" 
                         placeholder="Chase Bank"
+                        value={c_bank} 
+                        onChange={(e) => setc_bank(e.target.value)}
                     />
                 </div>
                 <div className="form-group col-md-4">
@@ -263,6 +288,8 @@ const Tab2 = () => {
                         type="number" 
                         id="bankRouting" 
                         placeholder="267084131"
+                        value={c_routing} 
+                        onChange={(e) => setc_routing(e.target.value)}
                     />
                 </div>
                 <div className="form-group col-md-4">
@@ -272,6 +299,8 @@ const Tab2 = () => {
                         type="number" 
                         id="bankAccount" 
                         placeholder="000034986475"
+                        value={c_account} 
+                        onChange={(e) => setc_account(e.target.value)}
                     />
                 </div>
             </div>
