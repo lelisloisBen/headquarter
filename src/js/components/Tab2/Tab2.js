@@ -103,7 +103,12 @@ const Tab2 = () => {
             <div className="form-row">
                 <div className="form-group col-md-6">
                     <label for="inputCity">City</label>
-                    <input type="text" className="form-control" id="inputCity" />
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        id="inputCity"
+                        placeholder="Miami Beach"
+                    />
                 </div>
                 <div className="form-group col-md-4">
                     <label for="inputState">State</label>
@@ -168,6 +173,7 @@ const Tab2 = () => {
                         type="text" 
                         className="form-control" 
                         id="inputZip" 
+                        placeholder="33139"
                     />
                 </div>
             </div>
