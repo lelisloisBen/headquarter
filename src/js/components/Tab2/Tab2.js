@@ -2,6 +2,19 @@ import React from 'react';
 // import styles from './Tab2.module.css';
 
 const Tab2 = () => {
+
+    const days = [];
+    for (let i=1; i<32; i++) {
+        days.push(<option key={i} value={i}>{i}</option>)
+    }
+    const dateObj = new Date();
+    const todaysyear = dateObj.getFullYear();
+    const startyear = todaysyear - 120;
+    const years = [];
+    for (let i=startyear; i<todaysyear; i++) {
+        years.push(<option key={i} value={i}>{i}</option>)
+    }
+
     return (
         <div className="container py-5">
             <h1>Add Consultant</h1>
@@ -33,15 +46,37 @@ const Tab2 = () => {
             </div>
 
             <div className="form-row">
-                <div className="form-group col-md-6">
-                    <label for="inputDOB">DOB</label>
-                    <input 
-                        type="text" 
-                        className="form-control" 
-                        id="inputDOB" 
-                        name="DOB" 
-                        placeholder="April 27 1984"
-                    />
+                <div className="form-group col-md-2">
+                    <label for="month">Birthdate</label>
+                    <select class="form-control" id="month">
+                        <option value="" selected="selected">Select a Month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+                <div className="form-group col-md-2">
+                    <label for="day">&nbsp;</label>
+                    <select class="form-control" id="day">
+                        <option value="" selected="selected">Select a Day</option>
+                        {days}
+                    </select>
+                </div>
+                <div className="form-group col-md-2">
+                    <label for="year">&nbsp;</label>
+                    <select class="form-control" id="year">
+                        <option value="" selected="selected">Select a Year</option>
+                        {years}
+                    </select>
                 </div>
 
                 <div className="form-group col-md-6">
