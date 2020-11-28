@@ -42,7 +42,7 @@ const Tab2 = () => {
     return (
         <div className="container py-5">
             <h1 className="text-center">New Consultant Form</h1>
-            <h4> {FullBirthdate} </h4>
+    
             <div className="form-row">
 
                 <div className="form-group col-md-6">
