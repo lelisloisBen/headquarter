@@ -5,24 +5,19 @@ const Tab2 = () => {
 
     const [consultantfirstName, setconsultantfirstName] = useState('');
     const [consultantlastName, setconsultantlastName] = useState('');
-
     const [consultantBmonth, setconsultantBmonth] = useState('Select a Month');
     const [consultantBday, setconsultantBday] = useState('Select a Day');
     const [consultantByear, setconsultantByear] = useState('Select a Year');
     const FullBirthdate = consultantBmonth + ' ' + consultantBday + ', ' + consultantByear;
-
     const [c_gender, setc_gender] = useState('Select a Gender');
-
     const [c_address, setc_address] = useState('');
     const [c_city, setc_city] = useState('');
     const [c_state, setc_state] = useState('Select a State');
     const [c_zip, setc_zip] = useState('');
-
     const [c_persEmail, setc_persEmail] = useState('');
     const [c_workEmail, setc_workEmail] = useState('');
     const [c_phone, setc_phone] = useState('');
     const [c_skypeID, setc_skypeID] = useState('');
-
     const [c_bank, setc_bank] = useState('');
     const [c_routing, setc_routing] = useState('');
     const [c_account, setc_account] = useState('');
