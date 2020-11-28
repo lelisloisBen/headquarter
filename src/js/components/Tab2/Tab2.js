@@ -221,6 +221,36 @@ const Tab2 = () => {
                 </div>
             </div>
 
+            <div className="form-row">
+                <div className="form-group col-md-4">
+                    <label for="bank">Bank Name</label>
+                    <input 
+                        className="form-control" 
+                        type="text" 
+                        id="bank" 
+                        placeholder="Chase Bank"
+                    />
+                </div>
+                <div className="form-group col-md-4">
+                    <label for="bankRouting">Routing Number</label>
+                    <input 
+                        className="form-control" 
+                        type="number" 
+                        id="bankRouting" 
+                        placeholder="267084131"
+                    />
+                </div>
+                <div className="form-group col-md-4">
+                    <label for="bankAccount">Account Number</label>
+                    <input 
+                        className="form-control" 
+                        type="number" 
+                        id="bankAccount" 
+                        placeholder="000034986475"
+                    />
+                </div>
+            </div>
+
             <button 
                 type="submit" 
                 className="btn btn-primary"
