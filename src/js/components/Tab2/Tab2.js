@@ -299,6 +299,7 @@ const Tab2 = () => {
                         type="number" 
                         id="bankAccount" 
                         placeholder="000034986475"
+                        maxlength="12"
                         value={c_account} 
                         onChange={(e) => setc_account(e.target.value)}
                     />
