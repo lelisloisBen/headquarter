@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import styles from './Tab2.module.css';
 
 const Tab2 = () => {
+
+    const [consultantfirstName, setconsultantfirstName] = useState('');
+    const [consultantlastName, setconsultantlastName] = useState('');
+
+    const [consultantBmonth, setconsultantBmonth] = useState('Select a Month');
+    const [consultantBday, setconsultantBday] = useState('Select a Day');
+    const [consultantByear, setconsultantByear] = useState('Select a Year');
+    const FullBirthdate = consultantBmonth + ' ' + consultantBday + ', ' + consultantByear;
+
+    const [c_gender, setc_gender] = useState('');
+
+    const [c_address, setc_address] = useState('');
+    const [c_city, setc_city] = useState('');
+    const [c_state, setc_state] = useState('');
+    const [c_zip, setc_zip] = useState('');
 
     const days = [];
     for (let i=1; i<32; i++) {
@@ -17,18 +32,20 @@ const Tab2 = () => {
 
     return (
         <div className="container py-5">
-            <h1>Add Consultant</h1>
-
+            <h1 className="text-center">New Consultant Form</h1>
+            <h4> {FullBirthdate} </h4>
             <div className="form-row">
 
                 <div className="form-group col-md-6">
-                    <label for="inputFirstname">First Name</label>
+                    <label for="inputFirstname">First Name </label>
                     <input 
                         type="text" 
                         className="form-control" 
                         id="inputFirstname" 
                         name="firstname" 
                         placeholder="John"
+                        value={consultantfirstName} 
+                        onChange={(e) => setconsultantfirstName(e.target.value)}
                     />
                 </div>
 
@@ -40,6 +57,8 @@ const Tab2 = () => {
                         id="inputLastname" 
                         name="lastname" 
                         placeholder="Doe"
+                        value={consultantlastName} 
+                        onChange={(e) => setconsultantlastName(e.target.value)}
                     />
                 </div>
 
@@ -48,8 +67,8 @@ const Tab2 = () => {
             <div className="form-row">
                 <div className="form-group col-md-2">
                     <label for="month">Birthdate</label>
-                    <select class="form-control" id="month">
-                        <option value="" selected="selected">Select a Month</option>
+                    <select class="form-control" id="month" onChange={(e) => setconsultantBmonth(e.target.value)}>
+                        <option value="" selected="selected">{consultantBmonth}</option>
                         <option value="January">January</option>
                         <option value="February">February</option>
                         <option value="March">March</option>
@@ -66,15 +85,15 @@ const Tab2 = () => {
                 </div>
                 <div className="form-group col-md-2">
                     <label for="day">&nbsp;</label>
-                    <select class="form-control" id="day">
-                        <option value="" selected="selected">Select a Day</option>
+                    <select class="form-control" id="day" onChange={(e) => setconsultantBday(e.target.value)}>
+                        <option value="" selected="selected">{consultantBday}</option>
                         {days}
                     </select>
                 </div>
                 <div className="form-group col-md-2">
                     <label for="year">&nbsp;</label>
-                    <select class="form-control" id="year">
-                        <option value="" selected="selected">Select a Year</option>
+                    <select class="form-control" id="year" onChange={(e) => setconsultantByear(e.target.value)}>
+                        <option value="" selected="selected">{consultantByear}</option>
                         {years}
                     </select>
                 </div>
