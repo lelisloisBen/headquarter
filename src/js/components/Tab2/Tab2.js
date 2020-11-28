@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 
 const Tab2 = () => {
 
+    const [msgError, setmsgError] = useState('');
+ 
     const [consultantfirstName, setconsultantfirstName] = useState('');
     const [consultantlastName, setconsultantlastName] = useState('');
     const [consultantBmonth, setconsultantBmonth] = useState('Select a Month');
@@ -53,7 +55,19 @@ const Tab2 = () => {
     });
 
     const submitForm = () => {
-        console.log(allData);
+        if (
+        !consultantfirstName ||
+        !consultantlastName ||
+        !FullBirthdate ||
+        !c_gender ||
+        !c_address ||
+        !c_city || !c_state || !c_zip || !c_persEmail || !c_workEmail || !c_phone || !c_skypeID ||
+        !c_bank || !c_routing || !c_account ) {
+            setmsgError("Please Check all the field, something is missing !")
+        } else {
+            setmsgError('');
+            console.log(allData);
+        }
         // fetch('UrlNotDefinedYet', {
         //     method: 'POST',
         //     body: allData,
@@ -345,6 +359,8 @@ const Tab2 = () => {
                     />
                 </div>
             </div>
+
+            <h4 > {msgError} </h4>
 
             <button 
                 type="submit" 
