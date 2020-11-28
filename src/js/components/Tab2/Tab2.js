@@ -32,6 +32,29 @@ const Tab2 = () => {
 
             </div>
 
+            <div className="form-row">
+                <div className="form-group col-md-6">
+                    <label for="inputDOB">DOB</label>
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        id="inputDOB" 
+                        name="DOB" 
+                        placeholder="April 27 1984"
+                    />
+                </div>
+
+                <div className="form-group col-md-6">
+                    <label for="inputGender">Gender</label>
+                    <select class="form-control" id="inputGender">
+                        <option value="" selected="selected">Select a Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+
             <div className="form-group">
                 <label for="inputAddress">Address</label>
                 <input 
@@ -106,11 +129,69 @@ const Tab2 = () => {
                 </div>
                 <div className="form-group col-md-2">
                     <label for="inputZip">Zip</label>
-                    <input type="text" className="form-control" id="inputZip" />
+                    <input 
+                        type="text" 
+                        className="form-control" 
+                        id="inputZip" 
+                    />
                 </div>
             </div>
 
-            <button type="submit" className="btn btn-primary">Save Consultant</button>
+            <div className="form-row">
+
+                <div className="form-group col-md-6">
+                    <label for="inputPersoEmail">Personal Email</label>
+                    <input 
+                        type="email" 
+                        className="form-control" 
+                        id="inputPersoEmail"  
+                        placeholder="name@gmail.com"
+                    />
+                </div>
+
+                <div className="form-group col-md-6">
+                    <label for="inputConsultantEmail">Consultant Email</label>
+                    <input 
+                        type="email" 
+                        className="form-control" 
+                        id="inputConsultantEmail" 
+                        placeholder="firstname.lastname@datavault.com"
+                    />
+                </div>
+
+            </div>
+
+            <div className="form-row">
+                <div className="form-group col-md-6">
+                    <label for="phone">Phone Number</label>
+                    <input 
+                        className="form-control" 
+                        type="tel" 
+                        id="phone" 
+                        name="phone"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        required 
+                        placeholder="(123)456-7890"
+                    />
+                </div>
+                <div className="form-group col-md-6">
+                    <label for="skype">Skype ID</label>
+                    <input 
+                        className="form-control" 
+                        type="text" 
+                        id="skype" 
+                        name="skype"
+                        placeholder="live:skypeID"
+                    />
+                </div>
+            </div>
+
+            <button 
+                type="submit" 
+                className="btn btn-primary"
+            >
+                Save Consultant
+            </button>
         </div>
     )
 };
