@@ -9,7 +9,7 @@ const Tab2 = () => {
     const [consultantBmonth, setconsultantBmonth] = useState('Select a Month');
     const [consultantBday, setconsultantBday] = useState('Select a Day');
     const [consultantByear, setconsultantByear] = useState('Select a Year');
-    // const FullBirthdate = consultantBmonth + ' ' + consultantBday + ', ' + consultantByear;
+    const FullBirthdate = consultantBmonth + ' ' + consultantBday + ', ' + consultantByear;
 
     const [c_gender, setc_gender] = useState('Select a Gender');
 
@@ -39,18 +39,37 @@ const Tab2 = () => {
         years.push(<option key={i} value={i}>{i}</option>)
     }
 
-    const submitForm = () => {
-        console.log("hey");
+    allData = {
+        "firstname": consultantfirstName,
+        "lastname": consultantlastName,
+        "birthdate": FullBirthdate,
+        "gender": c_gender,
+        "address": c_address,
+        "city": c_city,
+        "state": c_state,
+        "zipCode": c_zip,
+        "emailPerso": c_persEmail,
+        "emailWork": c_workEmail,
+        "phone": c_phone,
+        "skype": c_skypeID,
+        "bankName": c_bank,
+        "routing": c_routing,
+        "account": c_account
     }
+
+    const submitForm = () => {
+        console.log(allData);
+    }
+
 
     return (
         <div className="container py-5">
             <h1 className="text-center">New Consultant Form</h1>
-    
+        
             <div className="form-row">
 
                 <div className="form-group col-md-6">
-                    <label for="inputFirstname">First Name </label>
+                    <label htmlFor="inputFirstname">First Name </label>
                     <input 
                         type="text" 
                         className="form-control" 
@@ -63,7 +82,7 @@ const Tab2 = () => {
                 </div>
 
                 <div className="form-group col-md-6">
-                    <label for="inputLastname">Last Name</label>
+                    <label htmlFor="inputLastname">Last Name</label>
                     <input 
                         type="text" 
                         className="form-control" 
@@ -79,9 +98,9 @@ const Tab2 = () => {
 
             <div className="form-row">
                 <div className="form-group col-md-2">
-                    <label for="month">Birthdate</label>
-                    <select class="form-control" id="month" onChange={(e) => setconsultantBmonth(e.target.value)}>
-                        <option value="" selected="selected">{consultantBmonth}</option>
+                    <label htmlFor="month">Birthdate</label>
+                    <select className="form-control" id="month" onChange={(e) => setconsultantBmonth(e.target.value)}>
+                        <option value="" defaultValue="selected">{consultantBmonth}</option>
                         <option value="January">January</option>
                         <option value="February">February</option>
                         <option value="March">March</option>
@@ -97,24 +116,24 @@ const Tab2 = () => {
                     </select>
                 </div>
                 <div className="form-group col-md-2">
-                    <label for="day">&nbsp;</label>
-                    <select class="form-control" id="day" onChange={(e) => setconsultantBday(e.target.value)}>
-                        <option value="" selected="selected">{consultantBday}</option>
+                    <label htmlFor="day">&nbsp;</label>
+                    <select className="form-control" id="day" onChange={(e) => setconsultantBday(e.target.value)}>
+                        <option value="" defaultValue="selected">{consultantBday}</option>
                         {days}
                     </select>
                 </div>
                 <div className="form-group col-md-2">
-                    <label for="year">&nbsp;</label>
-                    <select class="form-control" id="year" onChange={(e) => setconsultantByear(e.target.value)}>
-                        <option value="" selected="selected">{consultantByear}</option>
+                    <label htmlFor="year">&nbsp;</label>
+                    <select className="form-control" id="year" onChange={(e) => setconsultantByear(e.target.value)}>
+                        <option value="" defaultValue="selected">{consultantByear}</option>
                         {years}
                     </select>
                 </div>
 
                 <div className="form-group col-md-6">
-                    <label for="inputGender">Gender</label>
-                    <select class="form-control" id="inputGender" onChange={(e) => setc_gender(e.target.value)}>
-                        <option value="" selected="selected">{c_gender}</option>
+                    <label htmlFor="inputGender">Gender</label>
+                    <select className="form-control" id="inputGender" onChange={(e) => setc_gender(e.target.value)}>
+                        <option value="" defaultValue="selected">{c_gender}</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
@@ -123,7 +142,7 @@ const Tab2 = () => {
             </div>
 
             <div className="form-group">
-                <label for="inputAddress">Address</label>
+                <label htmlFor="inputAddress">Address</label>
                 <input 
                     type="text" 
                     className="form-control" 
@@ -136,7 +155,7 @@ const Tab2 = () => {
 
             <div className="form-row">
                 <div className="form-group col-md-6">
-                    <label for="inputCity">City</label>
+                    <label htmlFor="inputCity">City</label>
                     <input 
                         type="text" 
                         className="form-control" 
@@ -147,9 +166,9 @@ const Tab2 = () => {
                     />
                 </div>
                 <div className="form-group col-md-4">
-                    <label for="inputState">State</label>
+                    <label htmlFor="inputState">State</label>
                     <select className="form-control" name="state" id="inputState" onChange={(e) => setc_state(e.target.value)}>
-                        <option value="" selected="selected">{c_state}</option>
+                        <option value="" defaultValue="selected">{c_state}</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -204,7 +223,7 @@ const Tab2 = () => {
                     </select>
                 </div>
                 <div className="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
+                    <label htmlFor="inputZip">Zip</label>
                     <input 
                         type="text" 
                         className="form-control" 
@@ -219,7 +238,7 @@ const Tab2 = () => {
             <div className="form-row">
 
                 <div className="form-group col-md-6">
-                    <label for="inputPersoEmail">Personal Email</label>
+                    <label htmlFor="inputPersoEmail">Personal Email</label>
                     <input 
                         type="email" 
                         className="form-control" 
@@ -231,7 +250,7 @@ const Tab2 = () => {
                 </div>
 
                 <div className="form-group col-md-6">
-                    <label for="inputConsultantEmail">Consultant Email</label>
+                    <label htmlFor="inputConsultantEmail">Consultant Email</label>
                     <input 
                         type="email" 
                         className="form-control" 
@@ -246,7 +265,7 @@ const Tab2 = () => {
 
             <div className="form-row">
                 <div className="form-group col-md-6">
-                    <label for="phone">Phone Number</label>
+                    <label htmlFor="phone">Phone Number</label>
                     <input 
                         className="form-control" 
                         type="tel" 
@@ -260,7 +279,7 @@ const Tab2 = () => {
                     />
                 </div>
                 <div className="form-group col-md-6">
-                    <label for="skype">Skype ID</label>
+                    <label htmlFor="skype">Skype ID</label>
                     <input 
                         className="form-control" 
                         type="text" 
@@ -275,7 +294,7 @@ const Tab2 = () => {
 
             <div className="form-row">
                 <div className="form-group col-md-4">
-                    <label for="bank">Bank Name</label>
+                    <label htmlFor="bank">Bank Name</label>
                     <input 
                         className="form-control" 
                         type="text" 
@@ -286,7 +305,7 @@ const Tab2 = () => {
                     />
                 </div>
                 <div className="form-group col-md-4">
-                    <label for="bankRouting">Routing Number</label>
+                    <label htmlFor="bankRouting">Routing Number</label>
                     <input 
                         className="form-control" 
                         type="text" 
@@ -298,7 +317,7 @@ const Tab2 = () => {
                     />
                 </div>
                 <div className="form-group col-md-4">
-                    <label for="bankAccount">Account Number</label>
+                    <label htmlFor="bankAccount">Account Number</label>
                     <input 
                         className="form-control" 
                         type="text" 
