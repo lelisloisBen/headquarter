@@ -34,7 +34,7 @@ const Tab2 = () => {
         years.push(<option key={i} value={i}>{i}</option>)
     }
 
-    const allData = {
+    const allData = JSON.stringify({
         "firstname": consultantfirstName,
         "lastname": consultantlastName,
         "birthdate": FullBirthdate,
@@ -50,10 +50,31 @@ const Tab2 = () => {
         "bankName": c_bank,
         "routing": c_routing,
         "account": c_account
-    }
+    });
 
     const submitForm = () => {
         console.log(allData);
+        // fetch('UrlNotDefinedYet', {
+        //     method: 'POST',
+        //     body: allData,
+        //     cors: 'no-cors',
+        //     headers:{
+        //         'Content-Type': 'application/json'
+        //     }
+        //     }).then(res => res.json())
+        //     .then(response => {
+        //         swal("SAVED SUCCESSFULLY!", JSON.stringify(response), "success", {
+        //             button: "Continue your day...",
+        //           }).then(() => {
+        //                 history.push('/');
+        //               });
+        //     })
+        //     .catch(error => {
+        //         swal("Something Went Wrong!", JSON.stringify("error: => "+ error), "error", {
+        //             button: "OK",
+        //           })
+        //     });
+        
     }
 
 
