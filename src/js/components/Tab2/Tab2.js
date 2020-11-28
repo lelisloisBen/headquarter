@@ -11,12 +11,12 @@ const Tab2 = () => {
     const [consultantByear, setconsultantByear] = useState('Select a Year');
     const FullBirthdate = consultantBmonth + ' ' + consultantBday + ', ' + consultantByear;
 
-    const [c_gender, setc_gender] = useState('');
+    // const [c_gender, setc_gender] = useState('');
 
-    const [c_address, setc_address] = useState('');
-    const [c_city, setc_city] = useState('');
-    const [c_state, setc_state] = useState('');
-    const [c_zip, setc_zip] = useState('');
+    // const [c_address, setc_address] = useState('');
+    // const [c_city, setc_city] = useState('');
+    // const [c_state, setc_state] = useState('');
+    // const [c_zip, setc_zip] = useState('');
 
     const days = [];
     for (let i=1; i<32; i++) {
