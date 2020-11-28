@@ -55,14 +55,7 @@ const Tab2 = () => {
     });
 
     const submitForm = () => {
-        if (
-        !consultantfirstName ||
-        !consultantlastName ||
-        !FullBirthdate ||
-        !c_gender ||
-        !c_address ||
-        !c_city || !c_state || !c_zip || !c_persEmail || !c_workEmail || !c_phone || !c_skypeID ||
-        !c_bank || !c_routing || !c_account ) {
+        if ( !consultantfirstName || !consultantlastName || !FullBirthdate || !c_gender || !c_address || !c_city || !c_state || !c_zip || !c_persEmail || !c_workEmail || !c_phone || !c_skypeID || !c_bank || !c_routing || !c_account ) {
             setmsgError("Please Check all the field, something is missing !")
         } else {
             setmsgError('');
