@@ -9,7 +9,7 @@ const Tab2 = () => {
     const [consultantBmonth, setconsultantBmonth] = useState('Select a Month');
     const [consultantBday, setconsultantBday] = useState('Select a Day');
     const [consultantByear, setconsultantByear] = useState('Select a Year');
-    const FullBirthdate = consultantBmonth + ' ' + consultantBday + ', ' + consultantByear;
+    // const FullBirthdate = consultantBmonth + ' ' + consultantBday + ', ' + consultantByear;
 
     const [c_gender, setc_gender] = useState('Select a Gender');
 
