@@ -39,7 +39,7 @@ const Tab2 = () => {
         years.push(<option key={i} value={i}>{i}</option>)
     }
 
-    allData = {
+    const allData = {
         "firstname": consultantfirstName,
         "lastname": consultantlastName,
         "birthdate": FullBirthdate,
