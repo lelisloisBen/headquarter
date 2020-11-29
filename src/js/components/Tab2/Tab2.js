@@ -63,7 +63,7 @@ const Tab2 = () => {
         } else {
             setmsgError('');
             console.log(allData);
-            fetch('UrlNotDefinedYet', {
+            fetch('https://headquarter-backend.herokuapp.com/add-consultant', {
                 method: 'POST',
                 body: allData,
                 cors: 'no-cors',
