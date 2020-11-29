@@ -60,28 +60,27 @@ const Tab2 = () => {
         } else {
             setmsgError('');
             console.log(allData);
-        }
-        // fetch('UrlNotDefinedYet', {
-        //     method: 'POST',
-        //     body: allData,
-        //     cors: 'no-cors',
-        //     headers:{
-        //         'Content-Type': 'application/json'
-        //     }
-        //     }).then(res => res.json())
-        //     .then(response => {
-        //         swal("SAVED SUCCESSFULLY!", JSON.stringify(response), "success", {
-        //             button: "Continue your day...",
-        //           }).then(() => {
-        //                 history.push('/');
-        //               });
-        //     })
-        //     .catch(error => {
-        //         swal("Something Went Wrong!", JSON.stringify("error: => "+ error), "error", {
-        //             button: "OK",
-        //           })
-        //     });
-        
+            fetch('UrlNotDefinedYet', {
+                method: 'POST',
+                body: allData,
+                cors: 'no-cors',
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+                }).then(res => res.json())
+                .then(response => {
+                    swal("SAVED SUCCESSFULLY!", JSON.stringify(response), "success", {
+                        button: "Continue your day...",
+                    }).then(() => {
+                            history.push('/');
+                        });
+                })
+                .catch(error => {
+                    swal("Something Went Wrong!", JSON.stringify("error: => "+ error), "error", {
+                        button: "OK",
+                    })
+                });
+            }
     }
 
 
