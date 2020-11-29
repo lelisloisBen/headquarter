@@ -16,20 +16,13 @@ function App() {
 
   const [homeUrl] = useState('https://iwash-react.herokuapp.com/');
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-  const [backen_url] = useState('https://iwash-backend.herokuapp.com/');
-  const [mapBoxPublicToken] = useState('pk.eyJ1Ijoic2FtaXJiZW56YWRhIiwiYSI6ImNrMnV1MG9vYjB6aW4zZXFjNGs1aHkxbmkifQ.rXgK6pv70xZsGs-NwOmodw');
-
-  const [washersData, setWashersData] = useState();
-  const [dryersData, setDryersData] = useState();
-  const [valuesData, setValuesData] = useState();
-  const [currentWashing, setCurrentWashing] = useState();
-  const [historyWashing, setHistoryWashing] = useState();
+  const [backen_url] = useState('https://headquarter-backend.herokuapp.com/');
+  
+  const [consultantData, setconsultantData] = useState();
   
   const [user, setUser] = useState(null);
   const [Auth, setAuth] = useState(null);
   let tokenAuth = localStorage.getItem('token');
-  let userId = localStorage.getItem('userID');
-  let userEmail = localStorage.getItem('email');
 
   useEffect(() => {
     const handleResize = () => setWindowHeight(window.innerHeight);
@@ -40,63 +33,14 @@ function App() {
   },[])
 
   useEffect(() => {
-    fetch(backen_url+'/washers')
+    fetch(backen_url+'/consultant')
       .then(res => res.json())
-      .then(res => setWashersData(res))
+      .then(res => setconsultantData(res))
       .catch(error => console.log('error: ', error) );
   },[backen_url])
+  
 
-  useEffect(() => {
-    fetch(backen_url+'/dryers')
-      .then(res => res.json())
-      .then(res => setDryersData(res))
-      .catch(error => console.log('error: ', error) );
-  },[backen_url])
-
-  useEffect(() => {
-    fetch(backen_url+'/values')
-      .then(res => res.json())
-      .then(res => setValuesData(res))
-      .catch(error => console.log('error: ', error) );
-  },[backen_url])
-
-  useEffect(() => {
-    fetch(backen_url+'/user_wash', {
-      method: 'POST',
-      cors: '*cors',
-      body: JSON.stringify({
-        user_id: userId,
-        user_email: userEmail
-      }),
-      headers:{
-          'Content-Type': 'application/json'
-      }
-    })
-      .then(res => res.json())
-      .then(res => setCurrentWashing(res))
-      .catch(error => console.log('error: ', error) );
-  // },[])
-  },[userId, userEmail, currentWashing, backen_url])
-
-  useEffect(() => {
-    fetch(backen_url+'/wash_history', {
-      method: 'POST',
-      cors: '*cors',
-      body: JSON.stringify({
-        user_id: userId,
-        user_email: userEmail
-      }),
-      headers:{
-          'Content-Type': 'application/json'
-      }
-    })
-      .then(res => res.json())
-      .then(res => setHistoryWashing(res))
-      .catch(error => console.log('error: ', error) );
-  // },[])
-  },[userId, userEmail, historyWashing, backen_url])
-
-  const providerValue = useMemo(() => ({ user, setUser, Auth, setAuth, washersData, dryersData, valuesData, setValuesData, currentWashing, backen_url, windowHeight, mapBoxPublicToken, historyWashing, homeUrl }), [user, setUser, Auth, setAuth, washersData, dryersData, valuesData, setValuesData, currentWashing, backen_url, windowHeight, mapBoxPublicToken, historyWashing, homeUrl]);
+  const providerValue = useMemo(() => ({ user, setUser, Auth, setAuth, consultantData, backen_url, windowHeight, homeUrl }), [user, setUser, Auth, setAuth, consultantData, backen_url, windowHeight, homeUrl]);
 
   return (
     <Router>

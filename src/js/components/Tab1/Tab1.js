@@ -1,25 +1,35 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../UserContext';
 // import styles from './Tab1.module.css';
 
 const Tab1 = () => {
+
+    const {consultantData} = useContext(UserContext);
+
+    console.log(consultantData);
+
     return (
         <div className="container py-5" >
             <h1>Consultant informations</h1>
 
             <div className="list-group">
-                <Link to="/" className="list-group-item list-group-item-action">Name Lastname </Link>
-                <Link to="/" className="list-group-item list-group-item-action">Name Lastname </Link>
-                <Link to="/" className="list-group-item list-group-item-action">Name Lastname </Link>
-                <Link to="/" className="list-group-item list-group-item-action">Name Lastname </Link>
-                <Link to="/" className="list-group-item list-group-item-action">Name Lastname </Link>
-                <Link to="/" className="list-group-item list-group-item-action">Name Lastname </Link>
-                <Link to="/" className="list-group-item list-group-item-action">Name Lastname </Link>
-                <Link to="/" className="list-group-item list-group-item-action">Name Lastname </Link>
-                <Link to="/" className="list-group-item list-group-item-action">Name Lastname </Link>
-                <Link to="/" className="list-group-item list-group-item-action">Name Lastname </Link>
-                <Link to="/" className="list-group-item list-group-item-action">Name Lastname </Link>
-                <Link to="/" className="list-group-item list-group-item-action">Name Lastname </Link>
+
+                {!consultantData 
+                ? "Empty list of consultants..."
+                : consultantData.map((item, index) => {
+                    return (
+                        <Link 
+                            key={index} 
+                            to={"/"+item.id}
+                            className="list-group-item list-group-item-action"
+                        >
+                            <b><i class="fas fa-user"></i> &nbsp; {item.lastname} {item.lastname}</b>
+                            <span className="float-right"><i class="fas fa-phone"></i> &nbsp; {item.phone}</span>
+                        </Link>
+                    )
+                })
+                }
             </div>
         </div>
     )
