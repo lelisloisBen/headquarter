@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 // import styles from './Tab2.module.css';
 
@@ -72,10 +71,11 @@ const Tab2 = () => {
                 }
                 }).then(res => res.json())
                 .then(response => {
-                    swal("SAVED SUCCESSFULLY!", JSON.stringify(response), "success", {
+                    console.log(JSON.stringify(response));
+                    swal("SAVED SUCCESSFULLY!", "Consultants added", "success", {
                         button: "Continue your day...",
                     }).then(() => {
-                            history.push('/');
+                            window.location.reload();
                         });
                 })
                 .catch(error => {
