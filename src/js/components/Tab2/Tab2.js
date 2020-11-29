@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import swal from 'sweetalert';
 // import styles from './Tab2.module.css';
 
 const Tab2 = () => {
