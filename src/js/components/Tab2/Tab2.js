@@ -4,7 +4,6 @@ import swal from 'sweetalert';
 
 const Tab2 = () => {
 
-    let history = useHistory();
     const [msgError, setmsgError] = useState('');
  
     const [consultantfirstName, setconsultantfirstName] = useState('');
