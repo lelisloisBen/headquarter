@@ -29,7 +29,7 @@ const LoggedHome = () => {
                         aria-controls="consultant" 
                         aria-selected="true"
                     >
-                        Consultant
+                        Consultants
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">
