@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 // import styles from './Tab2.module.css';
 
 const Tab2 = () => {
 
+    let history = useHistory();
     const [msgError, setmsgError] = useState('');
  
     const [consultantfirstName, setconsultantfirstName] = useState('');
