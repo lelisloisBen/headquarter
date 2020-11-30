@@ -1,4 +1,5 @@
 .section {
     padding-top: 100px;
+    min-height: 600px!important;
     background-color: #eeeeee;
 }

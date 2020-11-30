@@ -24,7 +24,7 @@ const Tab1 = () => {
                             to={"/consultant-profile/"+item.id}
                             className="list-group-item list-group-item-action"
                         >
-                            <b><i className="fas fa-user"></i> &nbsp; {item.lastname} {item.lastname}</b>
+                            <b><i className="fas fa-user"></i> &nbsp; {item.firstname} {item.lastname}</b>
                             <span className="float-right"><i className="fas fa-phone"></i> &nbsp; {item.phone}</span>
                         </Link>
                     )
