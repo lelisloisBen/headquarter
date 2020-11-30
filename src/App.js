@@ -11,6 +11,7 @@ import NotFound from './js/components/NotFound/NotFound';
 // const Home = lazy(() => import('./js/views/Home/Home'));
 const LoggedHome = lazy(() => import('./js/views/LoggedHome/LoggedHome'));
 const Login = lazy(() => import('./js/views/Login/Login'));
+const consultantProfile = lazy(() => import('./js/views/ConsultantProfile/ConsultantProfile'));
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
             <Switch>
               {!tokenAuth ? <Route exact path="/" component={Login} /> : <Route exact path="/" component={LoggedHome}/> }
               <Route path="/login" component={Login} />
+              <Route path="/consultant-profile/:CID" component={consultantProfile} />
               <Route render={() => <NotFound/>} />
             </Switch>
             </section>
