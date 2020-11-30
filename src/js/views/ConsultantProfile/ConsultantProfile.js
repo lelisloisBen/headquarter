@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 // import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../../UserContext';
 import styles from './ConsultantProfile.module.css';
@@ -14,19 +15,59 @@ const ConsultantProfile = (props) => {
     const {consultantData} = useContext(UserContext);
 
     let ConsultantID = props.match.params.CID - 1;
+    let C = consultantData[ConsultantID];
 
     // console.log(consultantData[ConsultantID].firstname  );
 
     return (
         <div className={styles.section}>
-            <div className="container text-center">
-                <h1>Consultant Profile</h1>
+            <div className="container mx-auto">
 
-                <div class="card text-white bg-warning mb-3">
-                    <div class="card-header">{consultantData[ConsultantID].firstname}</div>
+                <div class="card text-white bg-primary mb-3">
+                    <div class="card-header text-center"> <h1>Consultant Profile</h1> </div>
                     <div class="card-body">
-                        <h5 class="card-title">Secondary card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <h5 class="card-title text-center"> 
+                            <b>{C.firstname} {C.lastname}</b> 
+                            <Link to="/" className={["float-right", styles.editProfile].join(' ')}>
+                                <span ><i class="fas fa-user-edit"></i></span>
+                            </Link>
+                        </h5>
+                        <ul class="list-group list-group-flush" style={{color: "black"}}>
+
+                            <li class="list-group-item">
+                                <b>Birthdate: </b> {C.birthdate}
+                            </li>
+                            <li class="list-group-item">
+                                <b>Gender: </b> {C.gender}
+                            </li>
+                            <li class="list-group-item">
+                                <b>Phone: </b> {C.phone}
+                            </li>
+                            
+                            <li class="list-group-item">
+                                <b>Address: </b> <br/>
+                                {C.address} <br/>
+                                {C.city}, {C.state} {C.zipCode}
+                            </li>
+                            <li class="list-group-item">
+                                <b>Personal Email: </b> {C.emailPerso}
+                            </li>
+                            <li class="list-group-item">
+                                <b>Work Email: </b> {C.emailWork}
+                            </li>
+                            <li class="list-group-item">
+                                <b>Skype ID: </b> {C.skype}
+                            </li>
+
+                            <li class="list-group-item">
+                                <b>Bank Name: </b> {C.bankName} 
+                                <br/>
+                                <b>Account Number: </b> {C.account} 
+                                <br/>
+                                <b>Routing Number: </b> {C.routing}
+                            </li>
+                            
+                        </ul>
                     </div>
                 </div>
             </div>

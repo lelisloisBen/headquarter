@@ -20,6 +20,7 @@ function App() {
   const [backen_url] = useState('https://headquarter-backend.herokuapp.com/');
   
   const [consultantData, setconsultantData] = useState();
+  const [checkToken, setcheckToken] = useState('');
   
   const [user, setUser] = useState(null);
   const [Auth, setAuth] = useState(null);
@@ -39,9 +40,16 @@ function App() {
       .then(res => setconsultantData(res))
       .catch(error => console.log('error: ', error) );
   },[backen_url])
+
+  useEffect(() => {
+    fetch(backen_url+'/checkToken')
+      .then(res => res.json())
+      .then(res => setcheckToken(res.token))
+      .catch(error => console.log('error: ', error) );
+  })
   
 
-  const providerValue = useMemo(() => ({ user, setUser, Auth, setAuth, consultantData, backen_url, windowHeight, homeUrl }), [user, setUser, Auth, setAuth, consultantData, backen_url, windowHeight, homeUrl]);
+  const providerValue = useMemo(() => ({checkToken, user, setUser, Auth, setAuth, consultantData, backen_url, windowHeight, homeUrl }), [checkToken, user, setUser, Auth, setAuth, consultantData, backen_url, windowHeight, homeUrl]);
 
   return (
     <Router>
@@ -50,7 +58,7 @@ function App() {
           <HeadquarterNav/>
           <section style={{minHeight: windowHeight}}>
             <Switch>
-              {!tokenAuth ? <Route exact path="/" component={Login} /> : <Route exact path="/" component={LoggedHome}/> }
+              {(tokenAuth !== checkToken) ? <Route exact path="/" component={Login} /> : <Route exact path="/" component={LoggedHome}/> }
               <Route path="/login" component={Login} />
               <Route path="/consultant-profile/:CID" component={consultantProfile} />
               <Route render={() => <NotFound/>} />

@@ -3,3 +3,10 @@
     min-height: 600px!important;
     background-color: #eeeeee;
 }
+
+.editProfile {
+    color: black!important;
+}
+.editProfile:hover {
+    color: red!important;
+}

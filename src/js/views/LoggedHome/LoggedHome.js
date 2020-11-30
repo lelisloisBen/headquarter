@@ -18,7 +18,6 @@ const LoggedHome = () => {
     return (
         <>
         <section className={["container-fluid", styles.section].join(' ')} style={{minHeight: windowHeight}}>
-        
             <ul className="nav nav-tabs" id="myTab" role="tablist">
                 <li className="nav-item" role="presentation">
                     <a  className={["nav-link active", styles.tab1Color].join(' ')} 

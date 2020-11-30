@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../../UserContext';
 import styles from './Login.module.css';
 import swal from 'sweetalert';
@@ -31,13 +31,9 @@ const Login = () => {
             }).then(res => res.json())
             .then(response => {
                 let token = response.token;
-                let userID = response.id;
                 let email = response.email;
-                let firstname = response.firstname;
-                let lastname = response.lastname;
-                let avatar = response.avatar;
-                let wallet = response.wallet;
-                if (!token && !email && !firstname && !lastname ) {
+                let name = response.name;
+                if (!token && !email && !name ) {
                     swal("Sorry we couldn't find an account with that email.", "Try to register first.!", "error", {
                         button: "TRY AGAIN!",
                       })
@@ -45,23 +41,15 @@ const Login = () => {
                 } else {
                     // alert('LOGIN SUCCESSFUL');
                     localStorage.setItem('token', token);
-                    localStorage.setItem('userID', userID);
                     localStorage.setItem('email', email);
-                    localStorage.setItem('firstname', firstname);
-                    localStorage.setItem('lastname', lastname);
-                    localStorage.setItem('avatar', avatar);
-                    localStorage.setItem('wallet', wallet);
+                    localStorage.setItem('name', name);
                     setAuth({
                         'token': token,
-                        'userID': userID,
                         'email': email,
-                        'firstname': firstname,
-                        'lastname': lastname,
-                        'avatar': avatar,
-                        'wallet': wallet
+                        'name': name
                     })
-                    swal("LOGIN SUCCESSFUL!", "Welcome to iWash", "success", {
-                        button: "Let's Wash",
+                    swal("LOGIN SUCCESSFUL!", "Welcome to Headquarter", "success", {
+                        button: "Let's do that",
                       }).then(() => {
                             history.push('/');
                           });
@@ -104,14 +92,7 @@ const Login = () => {
                     onClick={loginFormHandler}
                 >
                     Login
-                </button>
-
-                <br/>
-                <br/>
-                <Link to="/" className={styles.forgotP}>
-                    Forgot password?
-                </Link>
-           
+                </button>           
 
         </section>
     );
