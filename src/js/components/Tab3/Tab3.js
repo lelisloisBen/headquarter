@@ -9,7 +9,7 @@ const Tab3 = () => {
     const [msgError, setmsgError] = useState('');
 
     const [c_Consultant, setc_Consultant] = useState('Select a Consultant');
-    const [c_ConsultantEmail, setc_ConsultantEmail] = useState('');
+    
     const [Time, setTime] = useState('');
     const [Client, setClient] = useState('');
     const [Vendor, setVendor] = useState('');
@@ -31,12 +31,21 @@ const Tab3 = () => {
     const [InterviewerLinkedIn, setInterviewerLinkedIn] = useState('');
     const [VendorNotes, setVendorNotes] = useState('');
     
+    const splitedCosultant = c_Consultant.split(',')
+    const c_ConsultantFirstName = splitedCosultant[0];
+    const c_ConsultantLastName = splitedCosultant[1];
+    const c_ConsultantEmail = splitedCosultant[2];
+    
 
     const allData = JSON.stringify({
-        "gender": c_Consultant
+        "c_firstname": c_ConsultantFirstName,
+        "c_lastname": c_ConsultantLastName,
+        "c_email": c_ConsultantEmail
     });
 
-    console.log(c_ConsultantEmail);
+    console.log(allData);
+
+   
 
     const submitForm = () => {
         console.log(allData)
@@ -78,11 +87,11 @@ const Tab3 = () => {
             <div className="form-row">
                 <div className="form-group col-md-6">
                     <label htmlFor="inputConsultant">Consultant</label>
-                    <select className="form-control" id="inputConsultant" onChange={(e) => {setc_Consultant(e.target.value); setc_ConsultantEmail(e.target.value2)}}>
+                    <select className="form-control" id="inputConsultant" onChange={(e) => setc_Consultant(e.target.value)}>
                         <option value="" defaultValue="selected">{c_Consultant}</option>
                         {!consultantData ? "Empty list of consultants..." : consultantData.map((item, index) => {
                             return (
-                                <option key={index} value={item.firstname} value2={item.emailWork}>{item.firstname + ' ' + item.lastname}</option>
+                                <option key={index} value={item.firstname+','+item.lastname+','+item.emailWork} >{item.firstname + ' ' + item.lastname}</option>
                             )
                         })
                         }
