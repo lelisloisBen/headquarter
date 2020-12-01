@@ -40,10 +40,30 @@ const Tab3 = () => {
     const allData = JSON.stringify({
         "c_firstname": c_ConsultantFirstName,
         "c_lastname": c_ConsultantLastName,
-        "c_email": c_ConsultantEmail
+        "c_email": c_ConsultantEmail,
+        "Time": Time,
+        "Client": Client,
+        "Vendor": Vendor,
+        "ImplementationPartner": ImplementationPartner,
+        "Mode": Mode,
+        "Type": Type,
+        "assist1": assist1,
+        "assist2": assist2,
+        "SA": SA,
+        "Manager": Manager,
+        "LiveCoding": LiveCoding,
+        "PositionTitle": PositionTitle,
+        "JD": JD,
+        "ProjectDuration": ProjectDuration,
+        "ProjectLocation": ProjectLocation,
+        "ClientWebsite": ClientWebsite,
+        "VendorWebsite": VendorWebsite,
+        "InterviewerName": InterviewerName,
+        "InterviewerLinkedIn": InterviewerLinkedIn,
+        "VendorNotes": VendorNotes
     });
 
-    console.log(allData);
+    // console.log(allData);
 
    
 
