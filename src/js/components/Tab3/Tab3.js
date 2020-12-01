@@ -148,8 +148,8 @@ const Tab3 = () => {
                     id="inputTime"
                     name="time"
                     placeholder="november 12th 2020 at 4pm"
-                    value={Time} 
-                    onChange={(e) => setTime(e.target.value)}
+                    thevalue={Time} 
+                    thechange={(e) => setTime(e.target.value)}
                 />
             </div>
 
@@ -164,8 +164,8 @@ const Tab3 = () => {
                     id="inputClient"
                     name="Client"
                     placeholder="Google"
-                    value={Client} 
-                    onChange={(e) => setClient(e.target.value)}
+                    thevalue={Client} 
+                    thechange={(e) => setClient(e.target.value)}
                 />
                 <FormInput
                     col="col-md-6"
@@ -176,8 +176,8 @@ const Tab3 = () => {
                     id="inputVendor"
                     name="Vendor"
                     placeholder="iData"
-                    value={Vendor} 
-                    onChange={(e) => setVendor(e.target.value)}
+                    thevalue={Vendor} 
+                    thechange={(e) => setVendor(e.target.value)}
                 />
             </div>
 
@@ -191,8 +191,8 @@ const Tab3 = () => {
                     id="ImplementationPartner"
                     name="ImplementationPartner"
                     placeholder="Data Partner LLC"
-                    value={ImplementationPartner} 
-                    onChange={(e) => setImplementationPartner(e.target.value)}
+                    thevalue={ImplementationPartner} 
+                    thechange={(e) => setImplementationPartner(e.target.value)}
                 />
                 <FormInput
                     col="col-md-4"
@@ -203,8 +203,8 @@ const Tab3 = () => {
                     id="inputMode"
                     name="Mode"
                     placeholder="Inbound or Outbound"
-                    value={Mode} 
-                    onChange={(e) => setMode(e.target.value)}
+                    thevalue={Mode} 
+                    thechange={(e) => setMode(e.target.value)}
                 />
                 <FormInput
                     col="col-md-4"
@@ -215,8 +215,8 @@ const Tab3 = () => {
                     id="inputType"
                     name="Type"
                     placeholder="Phone, skype"
-                    value={Type} 
-                    onChange={(e) => setType(e.target.value)}
+                    thevalue={Type} 
+                    thechange={(e) => setType(e.target.value)}
                 />
             </div>
 
@@ -256,8 +256,8 @@ const Tab3 = () => {
                     id="inputSalesAssociate"
                     name="SalesAssociate"
                     placeholder="Mark Jones"
-                    value={SA} 
-                    onChange={(e) => setSA(e.target.value)}
+                    thevalue={SA} 
+                    thechange={(e) => setSA(e.target.value)}
                 />
                 <FormInput
                     col="col-md-4"
@@ -268,8 +268,8 @@ const Tab3 = () => {
                     id="inputManager"
                     name="manager"
                     placeholder="samir"
-                    value={Manager} 
-                    onChange={(e) => setManager(e.target.value)}
+                    thevalue={Manager} 
+                    thechange={(e) => setManager(e.target.value)}
                 />
                 <FormInput
                     col="col-md-4"
@@ -280,8 +280,8 @@ const Tab3 = () => {
                     id="inputLiveCoding"
                     name="LiveCoding"
                     placeholder="yes, Python and SQL"
-                    value={LiveCoding} 
-                    onChange={(e) => setLiveCoding(e.target.value)}
+                    thevalue={LiveCoding} 
+                    thechange={(e) => setLiveCoding(e.target.value)}
                 />
             </div>
 
@@ -295,8 +295,8 @@ const Tab3 = () => {
                     id="inputPositionTitle"
                     name="PositionTitle"
                     placeholder="Big Data Engineer"
-                    value={PositionTitle} 
-                    onChange={(e) => setPositionTitle(e.target.value)}
+                    thevalue={PositionTitle} 
+                    thechange={(e) => setPositionTitle(e.target.value)}
                 />
             </div>
             <div className="form-row">
@@ -324,8 +324,8 @@ const Tab3 = () => {
                     id="inputProjectDuration"
                     name="Project Duration"
                     placeholder="6 month +"
-                    value={ProjectDuration} 
-                    onChange={(e) => setProjectDuration(e.target.value)}
+                    thevalue={ProjectDuration} 
+                    thechange={(e) => setProjectDuration(e.target.value)}
                 />
                 <FormInput
                     col="col-md-3"
@@ -336,8 +336,8 @@ const Tab3 = () => {
                     id="inputProjectLocation"
                     name="ProjectLocation"
                     placeholder="Miami, Florida"
-                    value={ProjectLocation} 
-                    onChange={(e) => setProjectLocation(e.target.value)}
+                    thevalue={ProjectLocation} 
+                    thechange={(e) => setProjectLocation(e.target.value)}
                 />
                 <FormInput
                     col="col-md-3"
@@ -348,8 +348,8 @@ const Tab3 = () => {
                     id="inputClientWebsite"
                     name="ClientWebsite"
                     placeholder="www.clientWebsite.com"
-                    value={ClientWebsite} 
-                    onChange={(e) => setClientWebsite(e.target.value)}
+                    thevalue={ClientWebsite} 
+                    thechange={(e) => setClientWebsite(e.target.value)}
                 />
                 <FormInput
                     col="col-md-3"
@@ -360,8 +360,8 @@ const Tab3 = () => {
                     id="inputVendorWebsite"
                     name="VendorWebsite"
                     placeholder="www.VendorWebsite.com"
-                    value={VendorWebsite} 
-                    onChange={(e) => setVendorWebsite(e.target.value)}
+                    thevalue={VendorWebsite} 
+                    thechange={(e) => setVendorWebsite(e.target.value)}
                 />
             </div>
 
@@ -375,8 +375,8 @@ const Tab3 = () => {
                     id="inputInterviewerName"
                     name="InterviewerName"
                     placeholder="John, mark, marguerite"
-                    value={InterviewerName} 
-                    onChange={(e) => setInterviewerName(e.target.value)}
+                    thevalue={InterviewerName} 
+                    thechange={(e) => setInterviewerName(e.target.value)}
                 />
                 <FormInput
                     col="col-md-4"
@@ -387,8 +387,8 @@ const Tab3 = () => {
                     id="inputInterviewerLinkedIn"
                     name="InterviewerLinkedIn"
                     placeholder="https://www.linkedin.com/in/marguerite-3343223ma/"
-                    value={InterviewerLinkedIn} 
-                    onChange={(e) => setInterviewerLinkedIn(e.target.value)}
+                    thevalue={InterviewerLinkedIn} 
+                    thechange={(e) => setInterviewerLinkedIn(e.target.value)}
                 />
                 <FormInput
                     col="col-md-4"
@@ -399,8 +399,8 @@ const Tab3 = () => {
                     id="inputVendorNotes"
                     name="VendorNotes"
                     placeholder="The interview will be 20 minutes, not technical"
-                    value={VendorNotes} 
-                    onChange={(e) => setVendorNotes(e.target.value)}
+                    thevalue={VendorNotes} 
+                    thechange={(e) => setVendorNotes(e.target.value)}
                 />
             </div>
 
