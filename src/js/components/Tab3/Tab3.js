@@ -63,6 +63,16 @@ const Tab3 = () => {
             setmsgError("Please select First Assistant!")
         } else if (!assist2 || assist2 === "Select Assistant 2") {
             setmsgError("Please select Second Assistant!")
+        } else if (!LiveCoding) {
+            setmsgError("Is there a Live Coding?")
+        } else if (!PositionTitle) {
+            setmsgError("Please enter Position Title!")
+        } else if (!JD) {
+            setmsgError("Please enter Job Description!")
+        } else if (!ProjectDuration) {
+            setmsgError("Please enter Project Duration!")
+        } else if (!ProjectLocation) {
+            setmsgError("Please enter Project Location!")
         } else {
             setmsgError('');
             console.log(allData);
@@ -98,7 +108,7 @@ const Tab3 = () => {
 
             <div className="form-row">
                 <div className="form-group col-md-6">
-                    <label htmlFor="inputConsultant">Consultant</label>
+                    <label htmlFor="inputConsultant">Consultant *</label>
                     <select className="form-control" id="inputConsultant" onChange={(e) => setc_Consultant(e.target.value)}>
                         <option value="" defaultValue="selected">{c_Consultant}</option>
                         {!consultantData ? "Empty list of consultants..." : consultantData.map((item, index) => {
@@ -112,7 +122,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-6"
                     for="inputTime"
-                    labelName="Interview Time"
+                    labelName="Interview Time *"
                     type="text"
                     class="form-control"
                     id="inputTime"
@@ -128,7 +138,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-6"
                     for="inputClient"
-                    labelName="Client"
+                    labelName="Client *"
                     type="text"
                     class="form-control"
                     id="inputClient"
@@ -140,7 +150,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-6"
                     for="inputVendor"
-                    labelName="Vendor"
+                    labelName="Vendor (option)"
                     type="text"
                     class="form-control"
                     id="inputVendor"
@@ -155,7 +165,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-4"
                     for="ImplementationPartner"
-                    labelName="Implementation Partner"
+                    labelName="Implementation Partner (option)"
                     type="text"
                     class="form-control"
                     id="ImplementationPartner"
@@ -167,7 +177,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-4"
                     for="inputMode"
-                    labelName="Mode"
+                    labelName="Mode *"
                     type="text"
                     class="form-control"
                     id="inputMode"
@@ -179,7 +189,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-4"
                     for="inputType"
-                    labelName="Type"
+                    labelName="Type *"
                     type="text"
                     class="form-control"
                     id="inputType"
@@ -192,7 +202,7 @@ const Tab3 = () => {
 
             <div className="form-row">
                 <div className="form-group col-md-6">
-                    <label htmlFor="inputassist1">Technical Assistant 1</label>
+                    <label htmlFor="inputassist1">First Technical Assistant *</label>
                     <select className="form-control" id="inputassist1" onChange={(e) => setassist1(e.target.value)}>
                         <option value="" defaultValue="selected">{assist1}</option>
                         <option value="Samir">Samir</option>
@@ -203,7 +213,7 @@ const Tab3 = () => {
                     </select>
                 </div>
                 <div className="form-group col-md-6">
-                    <label htmlFor="inputassist2">Technical Assistant 2</label>
+                    <label htmlFor="inputassist2">Second Technical Assistant (option)</label>
                     <select className="form-control" id="inputassist2" onChange={(e) => setassist2(e.target.value)}>
                         <option value="" defaultValue="selected">{assist2}</option>
                         <option value="">not needed</option>
@@ -220,7 +230,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-4"
                     for="inputSalesAssociate"
-                    labelName="Sales Associate Name"
+                    labelName="Sales Associate Name (option)"
                     type="text"
                     class="form-control"
                     id="inputSalesAssociate"
@@ -232,7 +242,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-4"
                     for="inputManager"
-                    labelName="Manager"
+                    labelName="Manager (option)"
                     type="text"
                     class="form-control"
                     id="inputManager"
@@ -244,7 +254,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-4"
                     for="inputLiveCoding"
-                    labelName="Live Coding ?"
+                    labelName="Live Coding ? *"
                     type="text"
                     class="form-control"
                     id="inputLiveCoding"
@@ -259,7 +269,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-12"
                     for="inputPositionTitle"
-                    labelName="Position Title"
+                    labelName="Position Title *"
                     type="text"
                     class="form-control"
                     id="inputPositionTitle"
@@ -271,7 +281,7 @@ const Tab3 = () => {
             </div>
             <div className="form-row">
                 <div className="form-group col-md-12">
-                    <label htmlFor="textareaJD">Job Description</label>
+                    <label htmlFor="textareaJD">Job Description *</label>
                     <textarea 
                         className="form-control"
                         rows="10"
@@ -288,7 +298,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-3"
                     for="inputProjectDuration"
-                    labelName="Project Duration"
+                    labelName="Project Duration *"
                     type="text"
                     class="form-control"
                     id="inputProjectDuration"
@@ -300,7 +310,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-3"
                     for="inputProjectLocation"
-                    labelName="Project Location"
+                    labelName="Project Location *"
                     type="text"
                     class="form-control"
                     id="inputProjectLocation"
@@ -312,7 +322,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-3"
                     for="inputClientWebsite"
-                    labelName="Client Website"
+                    labelName="Client Website (option)"
                     type="text"
                     class="form-control"
                     id="inputClientWebsite"
@@ -324,7 +334,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-3"
                     for="inputVendorWebsite"
-                    labelName="Vendor Website"
+                    labelName="Vendor Website (option)"
                     type="text"
                     class="form-control"
                     id="inputVendorWebsite"
@@ -339,7 +349,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-4"
                     for="inputInterviewerName"
-                    labelName="Interviewer Name(s)"
+                    labelName="Interviewer Name(s) (option)"
                     type="text"
                     class="form-control"
                     id="inputInterviewerName"
@@ -351,7 +361,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-4"
                     for="inputInterviewerLinkedIn"
-                    labelName="Interviewer LinkedIn(s)"
+                    labelName="Interviewer LinkedIn(s) (option)"
                     type="text"
                     class="form-control"
                     id="inputInterviewerLinkedIn"
@@ -363,7 +373,7 @@ const Tab3 = () => {
                 <FormInput
                     col="col-md-4"
                     for="inputVendorNotes"
-                    labelName="Vendor Notes"
+                    labelName="Vendor Notes (option)"
                     type="text"
                     class="form-control"
                     id="inputVendorNotes"
