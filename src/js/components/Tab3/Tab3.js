@@ -49,8 +49,20 @@ const Tab3 = () => {
 
     const submitForm = () => {
         console.log(allData)
-        if ( !Time || !c_Consultant ) {
-            setmsgError("Please Check all the field, something is missing !")
+        if ( c_Consultant === "Select a Consultant" || !c_Consultant ) {
+            setmsgError("Please select a consultant !")
+        } else if (!Time) {
+            setmsgError("Please enter Interview Time!")
+        } else if (!Client) {
+            setmsgError("Please enter the Client Name!")
+        } else if (!Mode) {
+            setmsgError("Please enter the Mode, Inbound or Outbound!")
+        } else if (!Type) {
+            setmsgError("Please enter Type, Phone, Skype!")
+        } else if (!assist1 || assist1 === "Select Assistant 1") {
+            setmsgError("Please select First Assistant!")
+        } else if (!assist2 || assist2 === "Select Assistant 2") {
+            setmsgError("Please select Second Assistant!")
         } else {
             setmsgError('');
             console.log(allData);
@@ -194,6 +206,7 @@ const Tab3 = () => {
                     <label htmlFor="inputassist2">Technical Assistant 2</label>
                     <select className="form-control" id="inputassist2" onChange={(e) => setassist2(e.target.value)}>
                         <option value="" defaultValue="selected">{assist2}</option>
+                        <option value="">not needed</option>
                         <option value="Samir">Samir</option>
                         <option value="Eric">Eric</option>
                         <option value="Mohsen">Mohsen</option>
