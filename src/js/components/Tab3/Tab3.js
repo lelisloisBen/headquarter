@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
-// import swal from 'sweetalert';
-// import styles from './Tab2.module.css';
+import React, { useState, useContext } from 'react';
+import { UserContext } from '../../../UserContext';
 
 import FormInput from '../FormInput/FormInput';
 
 const Tab3 = () => {
 
+    const {consultantData} = useContext(UserContext);
     const [msgError, setmsgError] = useState('');
- 
-    
-   
+
     const [c_Consultant, setc_Consultant] = useState('Select a Consultant');
     const [Time, setTime] = useState('');
     const [Client, setClient] = useState('');
@@ -79,15 +77,18 @@ const Tab3 = () => {
                     <label htmlFor="inputConsultant">Consultant</label>
                     <select className="form-control" id="inputConsultant" onChange={(e) => setc_Consultant(e.target.value)}>
                         <option value="" defaultValue="selected">{c_Consultant}</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        {!consultantData ? "Empty list of consultants..." : consultantData.map((item, index) => {
+                            return (
+                                <option key={index} value={item.firstname + ' ' + item.lastname}>{item.firstname + ' ' + item.lastname}</option>
+                            )
+                        })
+                        }
                     </select>
                 </div>
                 <FormInput
                     col="col-md-6"
                     for="inputTime"
-                    labelName="Time"
+                    labelName="Interview Time"
                     type="text"
                     class="form-control"
                     id="inputTime"
@@ -355,7 +356,7 @@ const Tab3 = () => {
                 className="btn btn-primary"
                 onClick={submitForm}
             >
-                Save Consultant
+                Save &#38; Email Interview
             </button>
         </div>
     )
