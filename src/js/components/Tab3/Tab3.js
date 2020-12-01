@@ -212,7 +212,7 @@ const Tab3 = () => {
             </div>
             <div className="form-row">
                 <FormInput
-                    col="col-md-6"
+                    col="col-md-12"
                     for="inputPositionTitle"
                     labelName="Position Title"
                     type="text"
@@ -223,7 +223,9 @@ const Tab3 = () => {
                     value={PositionTitle} 
                     onChange={(e) => setPositionTitle(e.target.value)}
                 />
-                <div className="form-group col-md-6">
+            </div>
+            <div className="form-row">
+                <div className="form-group col-md-12">
                     <label htmlFor="textareaJD">Job Description</label>
                     <textarea 
                         className="form-control"
