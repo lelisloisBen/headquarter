@@ -210,35 +210,7 @@ const Tab3 = () => {
                     </select>
                 </div>
             </div>
-            <div className="form-row">
-                <FormInput
-                    col="col-md-12"
-                    for="inputPositionTitle"
-                    labelName="Position Title"
-                    type="text"
-                    class="form-control"
-                    id="inputPositionTitle"
-                    name="PositionTitle"
-                    placeholder="Big Data Engineer"
-                    value={PositionTitle} 
-                    onChange={(e) => setPositionTitle(e.target.value)}
-                />
-            </div>
-            <div className="form-row">
-                <div className="form-group col-md-12">
-                    <label htmlFor="textareaJD">Job Description</label>
-                    <textarea 
-                        className="form-control"
-                        name="jobdescription" 
-                        id="textareaJD"
-                        placeholder="Description of the position..."
-                        value={JD} 
-                        onChange={(e) => setJD(e.target.value)}
-                    ></textarea>
-                </div>
-            </div>
-            
-        
+
             <div className="form-row">
                 <FormInput
                     col="col-md-4"
@@ -277,6 +249,128 @@ const Tab3 = () => {
                     onChange={(e) => setLiveCoding(e.target.value)}
                 />
             </div>
+
+            <div className="form-row">
+                <FormInput
+                    col="col-md-12"
+                    for="inputPositionTitle"
+                    labelName="Position Title"
+                    type="text"
+                    class="form-control"
+                    id="inputPositionTitle"
+                    name="PositionTitle"
+                    placeholder="Big Data Engineer"
+                    value={PositionTitle} 
+                    onChange={(e) => setPositionTitle(e.target.value)}
+                />
+            </div>
+            <div className="form-row">
+                <div className="form-group col-md-12">
+                    <label htmlFor="textareaJD">Job Description</label>
+                    <textarea 
+                        className="form-control"
+                        rows="10"
+                        name="jobdescription" 
+                        id="textareaJD"
+                        placeholder="Description of the position..."
+                        value={JD} 
+                        onChange={(e) => setJD(e.target.value)}
+                    ></textarea>
+                </div>
+            </div>
+
+            <div className="form-row">
+                <FormInput
+                    col="col-md-3"
+                    for="inputProjectDuration"
+                    labelName="Project Duration"
+                    type="text"
+                    class="form-control"
+                    id="inputProjectDuration"
+                    name="Project Duration"
+                    placeholder="6 month +"
+                    value={ProjectDuration} 
+                    onChange={(e) => setProjectDuration(e.target.value)}
+                />
+                <FormInput
+                    col="col-md-3"
+                    for="inputProjectLocation"
+                    labelName="Project Location"
+                    type="text"
+                    class="form-control"
+                    id="inputProjectLocation"
+                    name="ProjectLocation"
+                    placeholder="Miami, Florida"
+                    value={ProjectLocation} 
+                    onChange={(e) => setProjectLocation(e.target.value)}
+                />
+                <FormInput
+                    col="col-md-3"
+                    for="inputClientWebsite"
+                    labelName="Client Website"
+                    type="text"
+                    class="form-control"
+                    id="inputClientWebsite"
+                    name="ClientWebsite"
+                    placeholder="www.clientWebsite.com"
+                    value={ClientWebsite} 
+                    onChange={(e) => setClientWebsite(e.target.value)}
+                />
+                <FormInput
+                    col="col-md-3"
+                    for="inputVendorWebsite"
+                    labelName="Vendor Website"
+                    type="text"
+                    class="form-control"
+                    id="inputVendorWebsite"
+                    name="VendorWebsite"
+                    placeholder="www.VendorWebsite.com"
+                    value={VendorWebsite} 
+                    onChange={(e) => setVendorWebsite(e.target.value)}
+                />
+            </div>
+
+            <div className="form-row">
+                <FormInput
+                    col="col-md-4"
+                    for="inputInterviewerName"
+                    labelName="Interviewer Name(s)"
+                    type="text"
+                    class="form-control"
+                    id="inputInterviewerName"
+                    name="InterviewerName"
+                    placeholder="John, mark, marguerite"
+                    value={InterviewerName} 
+                    onChange={(e) => setInterviewerName(e.target.value)}
+                />
+                <FormInput
+                    col="col-md-4"
+                    for="inputInterviewerLinkedIn"
+                    labelName="Interviewer LinkedIn(s)"
+                    type="text"
+                    class="form-control"
+                    id="inputInterviewerLinkedIn"
+                    name="InterviewerLinkedIn"
+                    placeholder="https://www.linkedin.com/in/marguerite-3343223ma/"
+                    value={InterviewerLinkedIn} 
+                    onChange={(e) => setInterviewerLinkedIn(e.target.value)}
+                />
+                <FormInput
+                    col="col-md-4"
+                    for="inputVendorNotes"
+                    labelName="Vendor Notes"
+                    type="text"
+                    class="form-control"
+                    id="inputVendorNotes"
+                    name="VendorNotes"
+                    placeholder="The interview will be 20 minutes, not technical"
+                    value={VendorNotes} 
+                    onChange={(e) => setVendorNotes(e.target.value)}
+                />
+            </div>
+            
+        
+            
 
             
 
