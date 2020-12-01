@@ -9,10 +9,29 @@ const Tab3 = () => {
 
     const [msgError, setmsgError] = useState('');
  
-    const [consultantfirstName, setconsultantfirstName] = useState('');
-    const [consultantlastName, setconsultantlastName] = useState('');
+    
    
     const [c_Consultant, setc_Consultant] = useState('Select a Consultant');
+    const [Time, setTime] = useState('');
+    const [Client, setClient] = useState('');
+    const [Vendor, setVendor] = useState('');
+    const [ImplementationPartner, setImplementationPartner] = useState('');
+    const [Mode, setMode] = useState('');
+    const [Type, setType] = useState('');
+    const [assist1, setassist1] = useState('Select Assistant 1');
+    const [assist2, setassist2] = useState('Select Assistant 2');
+    const [SA, setSA] = useState('');
+    const [Manager, setManager] = useState('');
+    const [LiveCoding, setLiveCoding] = useState('');
+    const [PositionTitle, setPositionTitle] = useState('');
+    const [JD, setJD] = useState('');
+    const [ProjectDuration, setProjectDuration] = useState('');
+    const [ProjectLocation, setProjectLocation] = useState('');
+    const [ClientWebsite, setClientWebsite] = useState('');
+    const [VendorWebsite, setVendorWebsite] = useState('');
+    const [InterviewerName, setInterviewerName] = useState('');
+    const [InterviewerLinkedIn, setInterviewerLinkedIn] = useState('');
+    const [VendorNotes, setVendorNotes] = useState('');
     
 
     const allData = JSON.stringify({
@@ -23,12 +42,12 @@ const Tab3 = () => {
 
     const submitForm = () => {
         // console.log(allData)
-        if ( !consultantfirstName || !consultantlastName || !c_Consultant ) {
-            setmsgError("Please Check all the field, something is missing !")
-        } else {
-            setmsgError('');
-            console.log(allData);
-        }
+        // if ( !consultantfirstName || !consultantlastName || !c_Consultant ) {
+        //     setmsgError("Please Check all the field, something is missing !")
+        // } else {
+        //     setmsgError('');
+        //     console.log(allData);
+        // }
         //     fetch('https://headquarter-backend.herokuapp.com/add-consultant', {
         //         method: 'POST',
         //         body: allData,
@@ -102,37 +121,9 @@ const Tab3 = () => {
                     id="inputTime"
                     name="time"
                     placeholder="november 12th 2020 at 4pm"
-                    value={} 
-                    onChange={(e) => set(e.target.value)}
+                    value={Time} 
+                    onChange={(e) => setTime(e.target.value)}
                 />
-                <FormInput
-                    col="col-md-4"
-                    for="inputManager"
-                    labelName="Manager"
-                    type="text"
-                    class="form-control"
-                    id="inputManager"
-                    name="manager"
-                    placeholder="samir"
-                    value={} 
-                    onChange={(e) => set(e.target.value)}
-                />
-                <FormInput
-                    col="col-md-4"
-                    for="inputSalesAssociate"
-                    labelName="Sales Associate Name"
-                    type="text"
-                    class="form-control"
-                    id="inputSalesAssociate"
-                    name="SalesAssociate"
-                    placeholder="Mark Jones"
-                    value={} 
-                    onChange={(e) => set(e.target.value)}
-                />
-            </div>
-        
-            <div className="form-row">
-
                 <FormInput
                     col="col-md-4"
                     for="inputClient"
@@ -142,8 +133,8 @@ const Tab3 = () => {
                     id="inputClient"
                     name="Client"
                     placeholder="Google"
-                    value={} 
-                    onChange={(e) => set(e.target.value)}
+                    value={Client} 
+                    onChange={(e) => setClient(e.target.value)}
                 />
                 <FormInput
                     col="col-md-4"
@@ -154,8 +145,125 @@ const Tab3 = () => {
                     id="inputVendor"
                     name="Vendor"
                     placeholder="iData"
-                    value={} 
-                    onChange={(e) => set(e.target.value)}
+                    value={Vendor} 
+                    onChange={(e) => setVendor(e.target.value)}
+                />
+            </div>
+
+            <div className="form-row">
+                <FormInput
+                    col="col-md-4"
+                    for="ImplementationPartner"
+                    labelName="Implementation Partner"
+                    type="text"
+                    class="form-control"
+                    id="ImplementationPartner"
+                    name="ImplementationPartner"
+                    placeholder="Data Partner LLC"
+                    value={ImplementationPartner} 
+                    onChange={(e) => setImplementationPartner(e.target.value)}
+                />
+                <FormInput
+                    col="col-md-4"
+                    for="inputMode"
+                    labelName="Mode"
+                    type="text"
+                    class="form-control"
+                    id="inputMode"
+                    name="Mode"
+                    placeholder="Inbound or Outbound"
+                    value={Mode} 
+                    onChange={(e) => setMode(e.target.value)}
+                />
+                <FormInput
+                    col="col-md-4"
+                    for="inputType"
+                    labelName="Type"
+                    type="text"
+                    class="form-control"
+                    id="inputType"
+                    name="Type"
+                    placeholder="Phone, skype"
+                    value={Type} 
+                    onChange={(e) => setType(e.target.value)}
+                />
+            </div>
+
+            <div className="form-row">
+                <div className="form-group col-md-6">
+                    <label htmlFor="inputassist1">Technical Assistant 1</label>
+                    <select className="form-control" id="inputassist1" onChange={(e) => setassist1(e.target.value)}>
+                        <option value="" defaultValue="selected">{assist1}</option>
+                        <option value="Samir">Samir</option>
+                        <option value="Eric">Eric</option>
+                        <option value="Mohsen">Mohsen</option>
+                        <option value="Abdel">Abdel</option>
+                        <option value="Mehdi">Mehdi</option>
+                    </select>
+                </div>
+                <div className="form-group col-md-6">
+                    <label htmlFor="inputassist2">Technical Assistant 2</label>
+                    <select className="form-control" id="inputassist2" onChange={(e) => setassist2(e.target.value)}>
+                        <option value="" defaultValue="selected">{assist2}</option>
+                        <option value="Samir">Samir</option>
+                        <option value="Eric">Eric</option>
+                        <option value="Mohsen">Mohsen</option>
+                        <option value="Abdel">Abdel</option>
+                        <option value="Mehdi">Mehdi</option>
+                    </select>
+                </div>
+            </div>
+            <div className="form-row">
+                <FormInput
+                    col="col-md-6"
+                    for="inputPositionTitle"
+                    labelName="Position Title"
+                    type="text"
+                    class="form-control"
+                    id="inputPositionTitle"
+                    name="PositionTitle"
+                    placeholder="Big Data Engineer"
+                    value={PositionTitle} 
+                    onChange={(e) => setPositionTitle(e.target.value)}
+                />
+                <div className="form-group col-md-6">
+                    <label htmlFor="textareaJD">Job Description</label>
+                    <textarea 
+                        className="form-control"
+                        name="jobdescription" 
+                        id="textareaJD"
+                        placeholder="Description of the position..."
+                        value={JD} 
+                        onChange={(e) => setJD(e.target.value)}
+                    ></textarea>
+                </div>
+            </div>
+            
+        
+            <div className="form-row">
+                <FormInput
+                    col="col-md-4"
+                    for="inputSalesAssociate"
+                    labelName="Sales Associate Name"
+                    type="text"
+                    class="form-control"
+                    id="inputSalesAssociate"
+                    name="SalesAssociate"
+                    placeholder="Mark Jones"
+                    value={SA} 
+                    onChange={(e) => setSA(e.target.value)}
+                />
+                <FormInput
+                    col="col-md-4"
+                    for="inputManager"
+                    labelName="Manager"
+                    type="text"
+                    class="form-control"
+                    id="inputManager"
+                    name="manager"
+                    placeholder="samir"
+                    value={Manager} 
+                    onChange={(e) => setManager(e.target.value)}
                 />
                 <FormInput
                     col="col-md-4"
@@ -166,10 +274,9 @@ const Tab3 = () => {
                     id="inputLiveCoding"
                     name="LiveCoding"
                     placeholder="yes, Python and SQL"
-                    value={} 
-                    onChange={(e) => set(e.target.value)}
+                    value={LiveCoding} 
+                    onChange={(e) => setLiveCoding(e.target.value)}
                 />
-
             </div>
 
             
