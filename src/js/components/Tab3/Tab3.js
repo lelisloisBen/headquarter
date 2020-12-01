@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 // import styles from './Tab2.module.css';
 
 import FormInput from '../FormInput/FormInput';
-import FormSelect from '../FormSelect/FormSelect';
 
 const Tab3 = () => {
 
@@ -35,8 +34,6 @@ const Tab3 = () => {
     
 
     const allData = JSON.stringify({
-        "firstname": consultantfirstName,
-        "lastname": consultantlastName,
         "gender": c_Consultant
     });
 
