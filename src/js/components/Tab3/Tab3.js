@@ -74,28 +74,6 @@ const Tab3 = () => {
         <div className="container py-5">
             <h1 className="text-center">New Interview Form</h1>
 
-            Consultant name
-            Time
-            Client
-            Vendor
-            Implementation Partner
-            Mode (Inbound or Outbound)
-            Type (Phone, skype)
-            Tech assist1 (Samir)
-            Tech assist2 (Eric)
-            Sales associate
-            Manager
-            Live coding (yes, no)
-            Position Title
-            Job Description
-            Project duration
-            Project location
-            client website
-            vendor website
-            Interviewer name 
-            Interviewer LinkedIn
-            Vendor notes
-
             <div className="form-row">
                 <div className="form-group col-md-6">
                     <label htmlFor="inputConsultant">Consultant</label>
