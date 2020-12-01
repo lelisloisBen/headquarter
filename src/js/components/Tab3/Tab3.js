@@ -39,12 +39,12 @@ const Tab3 = () => {
 
     const submitForm = () => {
         // console.log(allData)
-        // if ( !consultantfirstName || !consultantlastName || !c_Consultant ) {
-        //     setmsgError("Please Check all the field, something is missing !")
-        // } else {
-        //     setmsgError('');
-        //     console.log(allData);
-        // }
+        if ( !Time || !c_Consultant ) {
+            setmsgError("Please Check all the field, something is missing !")
+        } else {
+            setmsgError('');
+            console.log(allData);
+        }
         //     fetch('https://headquarter-backend.herokuapp.com/add-consultant', {
         //         method: 'POST',
         //         body: allData,
@@ -106,11 +106,8 @@ const Tab3 = () => {
                         <option value="Other">Other</option>
                     </select>
                 </div>
-            </div>
-
-            <div className="form-row">
                 <FormInput
-                    col="col-md-4"
+                    col="col-md-6"
                     for="inputTime"
                     labelName="Time"
                     type="text"
@@ -121,8 +118,12 @@ const Tab3 = () => {
                     value={Time} 
                     onChange={(e) => setTime(e.target.value)}
                 />
+            </div>
+
+            <div className="form-row">
+                
                 <FormInput
-                    col="col-md-4"
+                    col="col-md-6"
                     for="inputClient"
                     labelName="Client"
                     type="text"
@@ -134,7 +135,7 @@ const Tab3 = () => {
                     onChange={(e) => setClient(e.target.value)}
                 />
                 <FormInput
-                    col="col-md-4"
+                    col="col-md-6"
                     for="inputVendor"
                     labelName="Vendor"
                     type="text"
@@ -368,11 +369,6 @@ const Tab3 = () => {
                     onChange={(e) => setVendorNotes(e.target.value)}
                 />
             </div>
-            
-        
-            
-
-            
 
             <h4 > {msgError} </h4>
 
