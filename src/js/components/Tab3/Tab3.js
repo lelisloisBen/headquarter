@@ -68,7 +68,7 @@ const Tab3 = () => {
    
 
     const submitForm = () => {
-        console.log(allData)
+        // console.log(allData)
         if ( c_Consultant === "Select a Consultant" || !c_Consultant ) {
             setmsgError("Please select a consultant !")
         } else if (!Time) {
@@ -81,7 +81,7 @@ const Tab3 = () => {
             setmsgError("Please enter Type, Phone, Skype!")
         } else if (!assist1 || assist1 === "Select Assistant 1") {
             setmsgError("Please select First Assistant!")
-        } else if (!assist2 || assist2 === "Select Assistant 2") {
+        } else if ( assist2 === "Select Assistant 2") {
             setmsgError("Please select Second Assistant!")
         } else if (!LiveCoding) {
             setmsgError("Is there a Live Coding?")
