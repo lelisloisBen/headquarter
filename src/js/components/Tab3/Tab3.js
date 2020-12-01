@@ -9,6 +9,7 @@ const Tab3 = () => {
     const [msgError, setmsgError] = useState('');
 
     const [c_Consultant, setc_Consultant] = useState('Select a Consultant');
+    const [c_ConsultantEmail, setc_ConsultantEmail] = useState('');
     const [Time, setTime] = useState('');
     const [Client, setClient] = useState('');
     const [Vendor, setVendor] = useState('');
@@ -35,8 +36,10 @@ const Tab3 = () => {
         "gender": c_Consultant
     });
 
+    console.log(c_ConsultantEmail);
+
     const submitForm = () => {
-        // console.log(allData)
+        console.log(allData)
         if ( !Time || !c_Consultant ) {
             setmsgError("Please Check all the field, something is missing !")
         } else {
@@ -75,11 +78,11 @@ const Tab3 = () => {
             <div className="form-row">
                 <div className="form-group col-md-6">
                     <label htmlFor="inputConsultant">Consultant</label>
-                    <select className="form-control" id="inputConsultant" onChange={(e) => setc_Consultant(e.target.value)}>
+                    <select className="form-control" id="inputConsultant" onChange={(e) => {setc_Consultant(e.target.value); setc_ConsultantEmail(e.target.value2)}}>
                         <option value="" defaultValue="selected">{c_Consultant}</option>
                         {!consultantData ? "Empty list of consultants..." : consultantData.map((item, index) => {
                             return (
-                                <option key={index} value={item.firstname + ' ' + item.lastname}>{item.firstname + ' ' + item.lastname}</option>
+                                <option key={index} value={item.firstname} value2={item.emailWork}>{item.firstname + ' ' + item.lastname}</option>
                             )
                         })
                         }
