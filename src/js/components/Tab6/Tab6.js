@@ -24,7 +24,7 @@ const Tab6 = () => {
                             to={"/interview-details/"+item.id}
                             className="list-group-item list-group-item-action"
                         >
-                            <b><i className="fas fa-user"></i> &nbsp; {item.firstname} {item.lastname}</b>
+                            <b><i className="fas fa-user"></i> &nbsp; {item.firstname} {item.lastname} </b> VS <span style={{color:"red"}}>{item.client}</span>
                             <span className="float-right"><i className="fas fa-clock"></i> &nbsp; {item.time}</span>
                         </Link>
                     )
