@@ -20,6 +20,7 @@ function App() {
   const [backen_url] = useState('https://headquarter-backend.herokuapp.com/');
   
   const [consultantData, setconsultantData] = useState();
+  const [interviewsData, setinterviewsData] = useState();
   const [checkToken, setcheckToken] = useState('');
   
   const [user, setUser] = useState(null);
@@ -42,6 +43,13 @@ function App() {
   },[backen_url])
 
   useEffect(() => {
+    fetch(backen_url+'/interviews')
+      .then(res => res.json())
+      .then(res => setinterviewsData(res))
+      .catch(error => console.log('error: ', error) );
+  },[backen_url])
+
+  useEffect(() => {
     fetch(backen_url+'/checkToken')
       .then(res => res.json())
       .then(res => setcheckToken(res.token))
@@ -49,7 +57,7 @@ function App() {
   })
   
 
-  const providerValue = useMemo(() => ({checkToken, user, setUser, Auth, setAuth, consultantData, backen_url, windowHeight, homeUrl }), [checkToken, user, setUser, Auth, setAuth, consultantData, backen_url, windowHeight, homeUrl]);
+  const providerValue = useMemo(() => ({checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl }), [checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl]);
 
   return (
     <Router>

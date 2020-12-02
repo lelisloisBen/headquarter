@@ -31,6 +31,11 @@
     color: black;
     font-weight: bold;
 }
+.tab6Color {
+    background-color: darkgreen;
+    color: white;
+    font-weight: bold;
+}
 .btnIwash {
     margin: 10px;
     background-color: #7CD1F9;

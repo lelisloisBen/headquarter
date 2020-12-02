@@ -10,6 +10,7 @@ import Tab2 from '../../components/Tab2/Tab2';
 import Tab3 from '../../components/Tab3/Tab3';
 import Tab4 from '../../components/Tab4/Tab4';
 import Tab5 from '../../components/Tab5/Tab5';
+import Tab6 from '../../components/Tab6/Tab6';
 
 const LoggedHome = () => {
 
@@ -41,6 +42,18 @@ const LoggedHome = () => {
                         aria-selected="false"
                     >
                         Add Consultant
+                    </a>
+                </li>
+                <li className="nav-item" role="presentation">
+                    <a  className={["nav-link", styles.tab6Color].join(' ')} 
+                        id="allInterview-tab" 
+                        data-toggle="tab" 
+                        href="#allInterview" 
+                        role="tab" 
+                        aria-controls="allInterview" 
+                        aria-selected="false"
+                    >
+                        Interviews List
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">
@@ -99,6 +112,15 @@ const LoggedHome = () => {
                     aria-labelledby="addNewConsultant-tab"
                 >
                     <Tab2/>
+                </div>
+
+                <div 
+                    className="tab-pane fade" 
+                    id="allInterview" 
+                    role="tabpanel" 
+                    aria-labelledby="allInterview-tab"
+                >
+                    <Tab6/>
                 </div>
 
                 <div 
