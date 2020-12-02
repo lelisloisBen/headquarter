@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from '../../../UserContext';
+import swal from 'sweetalert';
 
 import FormInput from '../FormInput/FormInput';
 
