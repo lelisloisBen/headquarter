@@ -7,17 +7,17 @@
     background-color: white;
 }
 .tab1Color {
-    background-color: red;
-    color: white;
-    font-weight: bold;
-}
-.tab2Color {
     background-color: blue;
     color: white;
     font-weight: bold;
 }
+.tab2Color {
+    background-color:lightblue;
+    color: white;
+    font-weight: bold;
+}
 .tab3Color {
-    background-color: yellow;
+    background-color: pink;
     color: black;
     font-weight: bold;
 }
@@ -27,12 +27,12 @@
     font-weight: bold;
 }
 .tab5Color {
-    background-color: lightblue;
+    background-color: yellow;
     color: black;
     font-weight: bold;
 }
 .tab6Color {
-    background-color: darkgreen;
+    background-color: red;
     color: white;
     font-weight: bold;
 }
