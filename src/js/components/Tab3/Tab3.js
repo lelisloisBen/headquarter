@@ -6,6 +6,7 @@ import FormInput from '../FormInput/FormInput';
 const Tab3 = () => {
 
     const {consultantData} = useContext(UserContext);
+    const {backen_url} = useContext(UserContext);
     const [msgError, setmsgError] = useState('');
 
     const [c_Consultant, setc_Consultant] = useState('Select a Consultant');
@@ -94,31 +95,31 @@ const Tab3 = () => {
             setmsgError("Please enter Project Location!")
         } else {
             setmsgError('');
-            console.log(allData);
+            // console.log(allData);
+            fetch(backen_url+'/newInterview', {
+                method: 'POST',
+                body: allData,
+                cors: 'no-cors',
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+                }).then(res => res.json())
+                .then(response => {
+                    console.log(JSON.stringify(response));
+                    swal("SAVED SUCCESSFULLY!", "Interview saved and sent by email", "success", {
+                        button: "Continue your day...",
+                    }).then(() => {
+                            window.location.reload();
+                        });
+                })
+                .catch(error => {
+                    swal("Something Went Wrong!", JSON.stringify("error: => "+ error), "error", {
+                        button: "OK",
+                    })
+                });
+            }
         }
-        //     fetch('https://headquarter-backend.herokuapp.com/add-consultant', {
-        //         method: 'POST',
-        //         body: allData,
-        //         cors: 'no-cors',
-        //         headers:{
-        //             'Content-Type': 'application/json'
-        //         }
-        //         }).then(res => res.json())
-        //         .then(response => {
-        //             console.log(JSON.stringify(response));
-        //             swal("SAVED SUCCESSFULLY!", "Consultants added", "success", {
-        //                 button: "Continue your day...",
-        //             }).then(() => {
-        //                     window.location.reload();
-        //                 });
-        //         })
-        //         .catch(error => {
-        //             swal("Something Went Wrong!", JSON.stringify("error: => "+ error), "error", {
-        //                 button: "OK",
-        //             })
-        //         });
-        //     }
-    }
+    
 
 
     return (
