@@ -26,6 +26,12 @@ const IwashNavBar = () => {
                             </Link> */}
                         </li>
                     : 
+                    <>
+                        <li>
+                            <Link to="/messages" >
+                                <i class="fas fa-envelope fa-2x"></i>
+                            </Link>
+                        </li>
                         <li>
                             <button 
                                 className="dropdown-item" 
@@ -37,6 +43,7 @@ const IwashNavBar = () => {
                                 LogOut
                             </button>  
                         </li>
+                    </>
                     }
                 </ul>
             </div>

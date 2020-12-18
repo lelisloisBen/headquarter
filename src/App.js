@@ -13,6 +13,7 @@ const LoggedHome = lazy(() => import('./js/views/LoggedHome/LoggedHome'));
 const Login = lazy(() => import('./js/views/Login/Login'));
 const consultantProfile = lazy(() => import('./js/views/ConsultantProfile/ConsultantProfile'));
 const interviewDetails = lazy(() => import('./js/views/InterviewDetails/InterviewDetails'));
+const MessagesView = lazy(() => import('./js/views/Messages/Messages'));
 
 function App() {
 
@@ -71,6 +72,7 @@ function App() {
               <Route path="/login" component={Login} />
               <Route path="/consultant-profile/:CID" component={consultantProfile} />
               <Route path="/interview-details/:IID" component={interviewDetails} />
+              <Route path="/messages" component={MessagesView} />
               <Route render={() => <NotFound/>} />
             </Switch>
             </section>
