@@ -24,6 +24,7 @@ function App() {
   const [consultantData, setconsultantData] = useState();
   const [interviewsData, setinterviewsData] = useState();
   const [checkToken, setcheckToken] = useState('');
+  const [messagesData, setmessagesData] = useState();
   
   const [user, setUser] = useState(null);
   const [Auth, setAuth] = useState(null);
@@ -57,9 +58,16 @@ function App() {
       .then(res => setcheckToken(res.token))
       .catch(error => console.log('error: ', error) );
   })
+
+  useEffect(() => {
+    fetch(backen_url+'/allWebsiteMessages')
+      .then(res => res.json())
+      .then(res => setmessagesData(res))
+      .catch(error => console.log('error: ', error) );
+  },[backen_url])
   
 
-  const providerValue = useMemo(() => ({checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl }), [checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl]);
+  const providerValue = useMemo(() => ({checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl, messagesData }), [checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl, messagesData]);
 
   return (
     <Router>
