@@ -60,11 +60,11 @@ function App() {
   })
 
   useEffect(() => {
-    fetch(backen_url+'/allWebsiteMessages')
+    fetch('https://headquarter-backend.herokuapp.com/allWebsiteMessages')
       .then(res => res.json())
       .then(res => setmessagesData(res))
       .catch(error => console.log('error: ', error) );
-  },[backen_url])
+  })
   
 
   const providerValue = useMemo(() => ({checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl, messagesData }), [checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl, messagesData]);
