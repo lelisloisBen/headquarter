@@ -8,10 +8,6 @@ const Messages = () => {
 
     const {messagesData} = useContext(UserContext);
 
-    const goToMessageDetails = (id) => {
-        console.log("id: ",id)
-    }
-
     return (
         <div className="container py-5" >
             <h1>Consultant informations</h1>
@@ -24,9 +20,8 @@ const Messages = () => {
                     let flagg = item.read_flag;
                     return (
                         <Link 
-                            to = {goToMessageDetails(item.id)}
                             key={index} 
-                            // to={"/consultant-profile/"+item.id}
+                            to={"/consultant-profile/"+item.id}
                             className = { flagg === 0 ? "list-group-item list-group-item-action not_read" : "list-group-item list-group-item-action"}
                         >
                             <b><i className="fas fa-user"></i> &nbsp; {item.full_name}</b>
