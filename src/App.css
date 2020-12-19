@@ -43,19 +43,15 @@
   font-weight: bold;
 }
 /* mail Icon with badge number */
-
 .icon-wrapper{
   position:relative;
   float:left;
 }
-
 *.icon-blue {color: #0088cc}
 *.icon-grey {color: #e25822}
-/* i {   
-  width:100px;
-  text-align:center;
-  vertical-align:middle;
-} */
+.icon-grey:hover {
+  color: #282c34;
+}
 .badge{
   background: red;
   color: white;
@@ -70,5 +66,4 @@
   right:-8px;
   padding:5px 8px;
 }
-
 /* end of mail Icon */

@@ -31,9 +31,9 @@ const IwashNavBar = () => {
                     : 
                     <>
                         <li>
-                            <Link to="/messages" class="icon-wrapper">
-                                <i class="fa fa-envelope fa-2x icon-grey"></i>
-                                <span class="badge">{countMessagesData}</span>
+                            <Link to="/messages" className="icon-wrapper">
+                                <i className="fa fa-envelope fa-2x icon-grey"></i>
+                                <span className="badge">{countMessagesData}</span>
                             </Link>
                         </li>
                         <li>
