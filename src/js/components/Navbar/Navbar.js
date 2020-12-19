@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../UserContext';
 
 import styles from './Navbar.module.css';
 import vault from '../../../img/vault.png';
 
 const IwashNavBar = () => {
-    
+
+    const {countMessagesData} = useContext(UserContext);
+
     let tokenAuth = localStorage.getItem('token');
 
     return (
@@ -28,8 +31,9 @@ const IwashNavBar = () => {
                     : 
                     <>
                         <li>
-                            <Link to="/messages" >
-                                <i class="fas fa-envelope fa-2x"></i>
+                            <Link to="/messages" class="icon-wrapper">
+                                <i class="fa fa-envelope fa-2x fa-border icon-grey"></i>
+                                <span class="badge">{countMessagesData}</span>
                             </Link>
                         </li>
                         <li>

@@ -25,6 +25,7 @@ function App() {
   const [interviewsData, setinterviewsData] = useState();
   const [checkToken, setcheckToken] = useState('');
   const [messagesData, setmessagesData] = useState();
+  const [countMessagesData, setcountMessagesData] = useState();
   
   const [user, setUser] = useState(null);
   const [Auth, setAuth] = useState(null);
@@ -65,9 +66,16 @@ function App() {
       .then(res => setmessagesData(res))
       .catch(error => console.log('error: ', error) );
   })
+
+  useEffect(() => {
+    fetch('https://headquarter-backend.herokuapp.com/countMessage')
+      .then(res => res.json())
+      .then(res => setcountMessagesData(res))
+      .catch(error => console.log('error: ', error) );
+  })
   
 
-  const providerValue = useMemo(() => ({checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl, messagesData }), [checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl, messagesData]);
+  const providerValue = useMemo(() => ({checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl, messagesData, countMessagesData }), [checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl, messagesData, countMessagesData]);
 
   return (
     <Router>
