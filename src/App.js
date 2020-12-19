@@ -14,6 +14,7 @@ const Login = lazy(() => import('./js/views/Login/Login'));
 const consultantProfile = lazy(() => import('./js/views/ConsultantProfile/ConsultantProfile'));
 const interviewDetails = lazy(() => import('./js/views/InterviewDetails/InterviewDetails'));
 const MessagesView = lazy(() => import('./js/views/Messages/Messages'));
+const messageDetail = lazy(() => import('./js/views/MessageDetail/MessageDetail'));
 
 function App() {
 
@@ -89,6 +90,7 @@ function App() {
               <Route path="/consultant-profile/:CID" component={consultantProfile} />
               <Route path="/interview-details/:IID" component={interviewDetails} />
               <Route path="/messages" component={MessagesView} />
+              <Route path="/message-detail/:MID" component={messageDetail} />
               <Route render={() => <NotFound/>} />
             </Switch>
             </section>

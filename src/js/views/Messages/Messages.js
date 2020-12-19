@@ -23,7 +23,7 @@ const Messages = () => {
                     return (
                         <Link 
                             key={index} 
-                            to={"/consultant-profile/"+item.id}
+                            to={"/message-detail/"+item.id}
                             className = { flagg === 0 ? "list-group-item list-group-item-action not_read" : "list-group-item list-group-item-action"}
                         >
                             <b><i className="fas fa-user"></i> &nbsp; {item.full_name}</b>
