@@ -10,8 +10,11 @@ const MessageDetail = (props) => {
 
     let MessageID = props.match.params.MID - 1;
     let M = messagesData[MessageID];
+    const messageID = M.id
 
-    // console.log(consultantData[ConsultantID].firstname  );
+    const messageProcessing = () => {
+        console.log("id: ", messageID)
+    } 
 
     return (
         <div className={styles.section}>
@@ -40,6 +43,12 @@ const MessageDetail = (props) => {
                             </li>
 
                         </ul>
+                        <button
+                            className="btn btn-primary mt-3"
+                            onClick={messageProcessing}
+                        >
+                            Message Read and Processed
+                        </button>
                     </div>
                 </div>
             </div>
