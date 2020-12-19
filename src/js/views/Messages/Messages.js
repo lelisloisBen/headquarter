@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../UserContext';
 
+import BigDataPttx from '../../../powerpoint/BigData.pdf';
+
 // import styles from './Messages.module.css';
 
 const Messages = () => {
@@ -10,7 +12,7 @@ const Messages = () => {
 
     return (
         <div className="container py-5" >
-            <h1>Consultant informations</h1>
+            <h1>Messages from Datavault Contact Form</h1>
 
             <div className="list-group">
 
@@ -31,6 +33,13 @@ const Messages = () => {
                 })
                 }
             </div>
+            <hr/>
+            <iframe 
+                title="pdf"
+                src={BigDataPttx} 
+                width="100%" 
+                height="600px"
+            ></iframe>
         </div>
     );
 };
