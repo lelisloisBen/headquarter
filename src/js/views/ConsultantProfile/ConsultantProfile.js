@@ -22,6 +22,11 @@ const ConsultantProfile = (props) => {
     return (
         <div className={styles.section}>
             <div className="container mx-auto">
+                <br/>
+                <Link to="/">
+                    <i class="fas fa-chevron-left"></i> 
+                    &nbsp; Back
+                </Link>
 
                 <div className="card text-white bg-primary mb-3">
                     <div className="card-header text-center"> <h1>Consultant Profile</h1> </div>

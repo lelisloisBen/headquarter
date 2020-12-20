@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../../UserContext';
+import { Link } from 'react-router-dom';
 import styles from './InterviewDetails.module.css';
 
 
@@ -19,6 +20,11 @@ const InterviewDetails = (props) => {
     return (
         <div className={styles.section}>
             <div className="container mx-auto">
+                <br/>
+                <Link to="/">
+                    <i class="fas fa-chevron-left"></i> 
+                    &nbsp; Back
+                </Link>
 
                 <div className="card text-white bg-warning mb-3">
                     <div className="card-header text-center"> <h1>Interview Detail</h1> </div>

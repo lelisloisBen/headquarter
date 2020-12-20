@@ -12,9 +12,10 @@ const Messages = () => {
 
     return (
         <div className="container py-5" >
-            <Link to="/messages">
+            <br/>
+            <Link to="/">
                 <i class="fas fa-chevron-left"></i> 
-                Back
+                &nbsp; Back
             </Link>
             <h1>Messages from Datavault Contact Form</h1>
 

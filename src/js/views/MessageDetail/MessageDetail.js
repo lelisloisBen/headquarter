@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../../UserContext';
+import { Link } from 'react-router-dom';
 import styles from './MessageDetail.module.css';
 
 
@@ -19,6 +20,11 @@ const MessageDetail = (props) => {
     return (
         <div className={styles.section}>
             <div className="container mx-auto">
+                <br/>
+                <Link to="/messages">
+                    <i class="fas fa-chevron-left"></i> 
+                    &nbsp; Back
+                </Link>
 
                 <div className="card text-white bg-warning mb-3">
                     <div className="card-header text-center"> <h1>Message Detail</h1> </div>
