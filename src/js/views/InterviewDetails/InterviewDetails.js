@@ -20,7 +20,6 @@ const InterviewDetails = (props) => {
     return (
         <div className={styles.section}>
             <div className="container mx-auto">
-                <br/>
                 <Link to="/">
                     <i class="fas fa-chevron-left"></i> 
                     &nbsp; Back

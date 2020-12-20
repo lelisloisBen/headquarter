@@ -20,7 +20,6 @@ const MessageDetail = (props) => {
     return (
         <div className={styles.section}>
             <div className="container mx-auto">
-                <br/>
                 <Link to="/messages">
                     <i class="fas fa-chevron-left"></i> 
                     &nbsp; Back
