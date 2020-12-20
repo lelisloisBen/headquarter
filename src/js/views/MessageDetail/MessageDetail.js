@@ -38,13 +38,12 @@ const MessageDetail = (props) => {
                             <li className="list-group-item">
                                 <b>Message: </b>
                                 <br/>
-                                <br/>
                                 {M.contact_message}
                             </li>
                             <li className="list-group-item">
                                 <b>Status: </b>
                                 <br/>
-                                <b>{M.read_flag === 0 ? "Message not processed yet!" : "Message processed."}</b>
+                                {M.read_flag === 0 ? "Message not processed yet!" : "Message processed."}
                             </li>
 
                         </ul>
