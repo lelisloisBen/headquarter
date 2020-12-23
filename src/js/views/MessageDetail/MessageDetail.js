@@ -81,7 +81,7 @@ const MessageDetail = (props) => {
         // console.log(messageDataDelete)
         swal({
             title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover this imaginary file!",
+            text: "Once deleted, you will not be able to recover this message!",
             icon: "warning",
             buttons: true,
             dangerMode: true,
@@ -90,7 +90,7 @@ const MessageDetail = (props) => {
               if (willDelete) {
                     history.push('/messages');
               } else {
-                     swal("Your imaginary file is safe!");
+                     swal("Your message is safe!");
           }
        });
     }
