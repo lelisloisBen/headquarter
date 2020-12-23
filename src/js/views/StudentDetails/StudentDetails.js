@@ -36,31 +36,36 @@ const StudentDetails = (props) => {
                             <option selected>Give access to courses?</option>
                             <option value="18">Access to all courses</option>
                             <optgroup label="Week 1">
-                                <option value="2">Two</option>
+                                <option value="1">Introduction</option>
+                                <option value="2">What is Big Data</option>
+                                <option value="3">MySQL</option>
+                                <option value="4">MongoDB</option>
+                                <option value="5">Hadoop Ecosystem</option>
                             </optgroup>
                             <optgroup label="Week 2">
-                                <option value="2">Two</option>
+                                <option value="6">HDFS</option>
+                                <option value="7">Hadoop MapReduce</option>
+                                <option value="8">Sqoop</option>
                             </optgroup>
                             <optgroup label="Week 3">
-                                <option value="2">Two</option>
+                                <option value="9">Flume</option>
+                                <option value="10">Kafka</option>
+                                <option value="11">Hive</option>
                             </optgroup>
                             <optgroup label="Week 4">
-                                <option value="2">Two</option>
+                                <option value="12">HBase</option>
+                                <option value="13">Spark</option>
                             </optgroup>
                             <optgroup label="Week 5">
-                                <option value="2">Two</option>
+                                <option value="14">Nifi</option>
+                                <option value="15">HortonWorks</option>
                             </optgroup>
                             <optgroup label="Week 6">
-                                <option value="2">Two</option>
-                            </optgroup>
-                            <optgroup label="Week 7">
-                                <option value="2">Two</option>
+                                <option value="16">Airflow</option>
+                                <option value="17">AWS</option>
                             </optgroup>
                             <optgroup label="Week 8">
-                                <option value="2">Two</option>
-                            </optgroup>
-                            <optgroup label="Week 9">
-                                <option value="2">Two</option>
+                                <option value="18">Shell Script</option>
                             </optgroup>
                         </select>
                         
