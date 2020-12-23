@@ -58,7 +58,7 @@ const Login = () => {
                 }
             })
             .catch(error => {
-                swal("Something Went Wrong!", JSON.stringify(error), "error", {
+                swal("Something Went Wrong!", JSON.stringify("error: => "+ error), "error", {
                     button: "OK",
                   })
             });
