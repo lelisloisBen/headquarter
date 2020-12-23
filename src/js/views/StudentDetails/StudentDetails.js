@@ -17,6 +17,10 @@ const StudentDetails = (props) => {
     let StudentID = props.match.params.SID - 1;
     let S = studentsData[StudentID];
 
+    const submitAccess = () => {
+        console.log(studentcourses);
+    }
+
     return (
         <div className={styles.section} style={{minHeight: windowHeight}}>
             <div className="container mx-auto">
@@ -71,6 +75,14 @@ const StudentDetails = (props) => {
                                 <option value="18">Shell Script</option>
                             </optgroup>
                         </select>
+
+                        <button 
+                            type="submit" 
+                            className="btn btn-primary"
+                            onClick={submitAccess}
+                        >
+                            Change Acces Courses
+                        </button>
                         
                     </div>
                 </div>
