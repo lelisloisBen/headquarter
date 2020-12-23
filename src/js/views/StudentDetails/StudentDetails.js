@@ -74,55 +74,66 @@ const StudentDetails = (props) => {
                                     {S.courses <= 13 ? "Week 4" : ""}
                                     {S.courses <= 15 ? "Week 5" : ""}
                                     {S.courses <= 17 ? "Week 6" : ""}
-                                    {S.courses = 18 ? "Week 8" : ""}
+                                    {S.courses === 18 ? "Week 8" : ""}
                                 </h4>
                             </div>
                         </div>
 
-                        <select className="form-control" onChange={(e) => setstudentcourses(e.target.value)}>
-                            <option defaultValue="selected">Give access to courses?</option>
-                            <option value="18">FULL ACCESS (Teachers)</option>
-                            <optgroup label="Week 1">
-                                <option value="1">Introduction</option>
-                                <option value="2">What is Big Data</option>
-                                <option value="3">MySQL</option>
-                                <option value="4">MongoDB</option>
-                                <option value="5">Hadoop Ecosystem</option>
-                            </optgroup>
-                            <optgroup label="Week 2">
-                                <option value="6">HDFS</option>
-                                <option value="7">Hadoop MapReduce</option>
-                                <option value="8">Sqoop</option>
-                            </optgroup>
-                            <optgroup label="Week 3">
-                                <option value="9">Flume</option>
-                                <option value="10">Kafka</option>
-                                <option value="11">Hive</option>
-                            </optgroup>
-                            <optgroup label="Week 4">
-                                <option value="12">HBase</option>
-                                <option value="13">Spark</option>
-                            </optgroup>
-                            <optgroup label="Week 5">
-                                <option value="14">Nifi</option>
-                                <option value="15">HortonWorks</option>
-                            </optgroup>
-                            <optgroup label="Week 6">
-                                <option value="16">Airflow</option>
-                                <option value="17">AWS</option>
-                            </optgroup>
-                            <optgroup label="Week 8">
-                                <option value="18">Shell Script</option>
-                            </optgroup>
-                        </select>
+                        <div className="row">
+                            <div className="col">
+                                <select className="form-control my-3" onChange={(e) => setstudentcourses(e.target.value)}>
+                                    <option defaultValue="selected">Give access to courses?</option>
+                                    <option value="18">FULL ACCESS (Teachers)</option>
+                                    <optgroup label="Week 1">
+                                        <option value="1">Introduction</option>
+                                        <option value="2">What is Big Data</option>
+                                        <option value="3">MySQL</option>
+                                        <option value="4">MongoDB</option>
+                                        <option value="5">Hadoop Ecosystem</option>
+                                    </optgroup>
+                                    <optgroup label="Week 2">
+                                        <option value="6">HDFS</option>
+                                        <option value="7">Hadoop MapReduce</option>
+                                        <option value="8">Sqoop</option>
+                                    </optgroup>
+                                    <optgroup label="Week 3">
+                                        <option value="9">Flume</option>
+                                        <option value="10">Kafka</option>
+                                        <option value="11">Hive</option>
+                                    </optgroup>
+                                    <optgroup label="Week 4">
+                                        <option value="12">HBase</option>
+                                        <option value="13">Spark</option>
+                                    </optgroup>
+                                    <optgroup label="Week 5">
+                                        <option value="14">Nifi</option>
+                                        <option value="15">HortonWorks</option>
+                                    </optgroup>
+                                    <optgroup label="Week 6">
+                                        <option value="16">Airflow</option>
+                                        <option value="17">AWS</option>
+                                    </optgroup>
+                                    <optgroup label="Week 8">
+                                        <option value="18">Shell Script</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
 
-                        <button 
-                            type="submit" 
-                            className="btn btn-primary"
-                            onClick={submitAccess}
-                        >
-                            Change Acces Courses
-                        </button>
+                        <div className="row">
+                            <div className="col text-center">
+                                <button 
+                                    type="submit" 
+                                    className="btn btn-primary"
+                                    onClick={submitAccess}
+                                >
+                                    Change Acces Courses
+                                </button>
+                            </div>
+                        </div>
+                        
+
+                        
                         
                     </div>
                 </div>
