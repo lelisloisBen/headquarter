@@ -15,11 +15,10 @@ const IwashNavBar = () => {
         <>
         <nav className={["navbar fixed-top navbar-expand-lg navbar-light", styles.navBarI].join(' ')}>
             <div className="container">
-                <Link className="navbar-brand mobile" to="/">
-                    <img src={vault} width="30" height="30" className="d-inline-block align-top" alt="coin"/>
+                <Link className="navbar-brand mobile btn btn-warning" to="/">
+                    <i class="fas fa-building"></i>
                     &nbsp;
-                    <i className="fas fa-info"></i>
-                    <span className={styles.wash}>Headquarter | DataVault</span>
+                    <span className={styles.wash}><b>Headquarter</b></span>
                 </Link>
                 <ul className="nav navbar-nav navbar-right">
                     {!tokenAuth ?
