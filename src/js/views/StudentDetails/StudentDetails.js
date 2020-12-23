@@ -40,7 +40,7 @@ const StudentDetails = (props) => {
                         <p>{studentcourses}</p>
 
                         <select className="form-control" onChange={(e) => setstudentcourses(e.target.value)}>
-                            <option selected>Give access to courses?</option>
+                            <option defaultValue="selected">Give access to courses?</option>
                             <option value="18">FULL ACCESS (Teachers)</option>
                             <optgroup label="Week 1">
                                 <option value="1">Introduction</option>
