@@ -12,10 +12,34 @@ const MessageDetail = (props) => {
 
     let MessageID = props.match.params.MID - 1;
     let M = messagesData[MessageID];
-    const messageID = M.id
+    // const messageID = M.id
+
+    const messageData = JSON.stringify({
+        "id": M.id
+    });
 
     const messageProcessing = () => {
-        console.log("id: ", messageID)
+        fetch('https://headquarter-backend.herokuapp.com/messageProcessed', {
+                method: 'PUT',
+                body: messageData,
+                cors: 'no-cors',
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+                }).then(res => res.json())
+                .then(response => {
+                    console.log(JSON.stringify(response));
+                    swal("MESSAGE PROCESSED!", "Message read and processed", "success", {
+                        button: "Good job boss",
+                    }).then(() => {
+                            window.location.reload();
+                        });
+                })
+                .catch(error => {
+                    swal("Something Went Wrong!", JSON.stringify("error: => "+ error), "error", {
+                        button: "OK",
+                    })
+                });
     } 
 
     return (
