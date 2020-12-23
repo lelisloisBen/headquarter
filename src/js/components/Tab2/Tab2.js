@@ -60,7 +60,7 @@ const Tab2 = () => {
             setmsgError("Please Check all the field, something is missing !")
         } else {
             setmsgError('');
-            console.log(allData);
+            // console.log(allData);
             fetch('https://headquarter-backend.herokuapp.com/add-consultant', {
                 method: 'POST',
                 body: allData,
