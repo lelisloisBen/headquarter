@@ -14,11 +14,12 @@ const StudentDetails = (props) => {
     const {windowHeight} = useContext(UserContext);
     const {studentsData} = useContext(UserContext);
 
-    let StudentID = props.match.params.SID - 1;
+    let databaseID = props.match.params.SID;
+    let StudentID = databaseID - 1;
     let S = studentsData[StudentID];
 
     const allData = JSON.stringify({
-        "id": StudentID,
+        "id": databaseID,
         "course": studentcourses
     });
 
