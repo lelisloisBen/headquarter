@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../../UserContext';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 import styles from './MessageDetail.module.css';
 
@@ -10,6 +10,7 @@ const MessageDetail = (props) => {
 
     const {windowHeight} = useContext(UserContext);
     const {messagesData} = useContext(UserContext);
+    let history = useHistory();
 
     let MessageID = props.match.params.MID - 1;
     let M = messagesData[MessageID];
@@ -35,7 +36,7 @@ const MessageDetail = (props) => {
                     swal("MESSAGE PROCESSED!", "Message read and processed", "success", {
                         button: "Good job boss",
                     }).then(() => {
-                            window.location.reload();
+                            history.push('/messages');
                         });
                 })
                 .catch(error => {
