@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../UserContext';
 import { Link } from 'react-router-dom';
 import styles from './StudentDetails.module.css';
@@ -9,6 +9,7 @@ const StudentDetails = (props) => {
 
     // const {backen_url} = useContext(UserContext);
     // let history = useHistory();
+    const [studentcourses, setstudentcourses] = useState(0);
 
     const {windowHeight} = useContext(UserContext);
     const {studentsData} = useContext(UserContext);
@@ -32,7 +33,9 @@ const StudentDetails = (props) => {
                         </h5>
                         <h4>{S.email} - {S.courses}</h4>
 
-                        <select className="form-control">
+                        <p>{studentcourses}</p>
+
+                        <select className="form-control" onChange={(e) => setstudentcourses(e.target.value)}>
                             <option selected>Give access to courses?</option>
                             <option value="18">FULL ACCESS (Teachers)</option>
                             <optgroup label="Week 1">
