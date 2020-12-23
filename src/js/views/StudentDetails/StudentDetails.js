@@ -25,7 +25,7 @@ const StudentDetails = (props) => {
         <div className={styles.section} style={{minHeight: windowHeight}}>
             <div className="container mx-auto">
                 <Link to="/">
-                    <i class="fas fa-chevron-left"></i> 
+                    <i className="fas fa-chevron-left"></i> 
                     &nbsp; Back
                 </Link>
 
