@@ -11,6 +11,7 @@ import Tab3 from '../../components/Tab3/Tab3';
 import Tab4 from '../../components/Tab4/Tab4';
 import Tab5 from '../../components/Tab5/Tab5';
 import Tab6 from '../../components/Tab6/Tab6';
+import Tab7 from '../../components/Tab7/Tab7';
 
 const LoggedHome = () => {
 
@@ -81,7 +82,21 @@ const LoggedHome = () => {
                         aria-controls="employees" 
                         aria-selected="false"
                     >
-                        Employees
+                        Students
+                    </a>
+                </li>
+                <li className="nav-item" role="presentation">
+                    <a  className={["nav-link", styles.tab4Color].join(' ')} 
+                        id="addStudent-tab" 
+                        data-toggle="tab" 
+                        href="#addStudent" 
+                        role="tab" 
+                        aria-controls="addStudent" 
+                        aria-selected="false"
+                    >   
+                        <i class="fas fa-plus"></i>
+                        &nbsp;
+                        Students
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">
@@ -143,6 +158,15 @@ const LoggedHome = () => {
                     aria-labelledby="employees-tab"
                 >
                     <Tab4/>
+                </div>
+
+                <div 
+                    className="tab-pane fade" 
+                    id="addStudent" 
+                    role="tabpanel" 
+                    aria-labelledby="addStudent-tab"
+                >
+                    <Tab7/>
                 </div>
 
                 <div 
