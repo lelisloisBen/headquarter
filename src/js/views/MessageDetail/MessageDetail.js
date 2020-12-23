@@ -117,7 +117,9 @@ const MessageDetail = (props) => {
                                     className="btn btn-success mt-3 float-right"
                                     onClick={messageProcessing}
                                 >
-                                    Message Processed
+                                    Message Processed 
+                                    &nbsp;
+                                    <i class="fas fa-check"></i>
                                 </button>
                                 : 
                                 <button
@@ -125,6 +127,8 @@ const MessageDetail = (props) => {
                                     onClick={messageAsNotRead}
                                 >
                                     Mark as not read
+                                    &nbsp;
+                                    <i class="fas fa-ban"></i>
                                 </button>}
                             </div>
                             <div className="col">
