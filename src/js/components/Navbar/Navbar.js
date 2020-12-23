@@ -37,16 +37,16 @@ const IwashNavBar = () => {
                         </li>
                         <li>
                             <button 
-                                className="btn btn-warning mx-2" 
+                                className="btn btn-warning ml-3" 
                                 onClick={async () => {
                                     localStorage.clear();
                                     window.location.href = "/";
                                 }}
                             >
                                 <b>
-                                    <i class="fas fa-power-off"></i>
-                                    &nbsp;
                                     LogOut
+                                    &nbsp;  
+                                    <i class="fas fa-power-off"></i>
                                 </b>
                             </button>  
                         </li>
