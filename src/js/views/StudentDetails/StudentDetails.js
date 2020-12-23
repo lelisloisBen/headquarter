@@ -26,7 +26,7 @@ const StudentDetails = (props) => {
 
     const submitAccess = () => {
         fetch('https://headquarter-backend.herokuapp.com/updateCourses', {
-                method: 'POST',
+                method: 'PUT',
                 body: allData,
                 cors: 'no-cors',
                 headers:{
