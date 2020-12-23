@@ -16,10 +16,12 @@ const MessageDetail = (props) => {
     const messageID = M.id
 
     const messageData = JSON.stringify({
-        "id": messageID
+        "id": messageID,
+        "read": 1
     });
 
     const messageProcessing = () => {
+        // console.log("datas", messageData);
         fetch('https://headquarter-backend.herokuapp.com/messageProcessed', {
                 method: 'PUT',
                 body: messageData,
