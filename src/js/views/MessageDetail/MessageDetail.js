@@ -58,7 +58,7 @@ const MessageDetail = (props) => {
                                 {M.read_flag === 0 
                                 ?
                                 <button
-                                    className="btn btn-primary mt-3"
+                                    className="btn btn-success mt-3 float-right"
                                     onClick={messageProcessing}
                                 >
                                     Message Processed
