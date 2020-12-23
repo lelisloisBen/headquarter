@@ -7,6 +7,7 @@ import styles from './MessageDetail.module.css';
 
 const MessageDetail = (props) => {
 
+    const {windowHeight} = useContext(UserContext);
     const {messagesData} = useContext(UserContext);
 
     let MessageID = props.match.params.MID - 1;
@@ -18,7 +19,7 @@ const MessageDetail = (props) => {
     } 
 
     return (
-        <div className={styles.section}>
+        <div className={styles.section} style={{minHeight: windowHeight}}>
             <div className="container mx-auto">
                 <Link to="/messages">
                     <i class="fas fa-chevron-left"></i> 
