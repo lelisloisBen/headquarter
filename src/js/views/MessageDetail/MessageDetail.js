@@ -78,7 +78,12 @@ const MessageDetail = (props) => {
     }
 
     const messageDelete = () => {
-        console.log(messageDataDelete)
+        // console.log(messageDataDelete)
+        swal("Delete Message!", "Are you sure you want to permenently remove this message?", "success", {
+            button: "OK",
+        }).then(() => {
+                history.push('/messages');
+            });
     }
 
     return (
