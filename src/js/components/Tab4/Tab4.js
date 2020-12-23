@@ -9,7 +9,7 @@ const Tab4 = () => {
 
     return (
         <div className="container py-5" >
-            <h1>Students List in Progress</h1>
+            <h1 className="text-center">Teachers/Students Cohort in Progress</h1>
 
             <div className="list-group">
 

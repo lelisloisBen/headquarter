@@ -57,12 +57,21 @@ const StudentDetails = (props) => {
                 </Link>
 
                 <div className="card text-white bg-warning mb-3">
-                    <div className="card-header text-center"> <h1>Student Details</h1> </div>
+                    <div className="card-header text-center"> <h1>Teacher/Student Details</h1> </div>
                     <div className="card-body">
-                        <h5 className="card-title"> 
+                        <h2 className="card-title text-center"> 
                             <b>{S.firstname} {S.lastname}</b> 
-                        </h5>
-                        <h4>{S.email} - {S.courses}</h4>
+                        </h2>
+                        <div className="row">
+                            <div className="col">
+                                <h4>{S.email}</h4>
+                            </div>
+                            <div className="col">
+                                <h4 className="float-right">
+                                    {S.courses >= 5 ? "Week 1" : ""}
+                                </h4>
+                            </div>
+                        </div>
 
                         <select className="form-control" onChange={(e) => setstudentcourses(e.target.value)}>
                             <option defaultValue="selected">Give access to courses?</option>
