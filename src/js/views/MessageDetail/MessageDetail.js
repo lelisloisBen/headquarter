@@ -136,6 +136,8 @@ const MessageDetail = (props) => {
                                     className="btn btn-danger mt-3"
                                 >
                                     Delete Message
+                                    &nbsp;
+                                    <i class="fas fa-trash-alt"></i>
                                 </button>
                             </div>
                         </div>
