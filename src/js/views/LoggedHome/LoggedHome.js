@@ -41,7 +41,9 @@ const LoggedHome = () => {
                         aria-controls="addNewConsultant" 
                         aria-selected="false"
                     >
-                        Add Consultant
+                        <i class="fas fa-plus"></i>
+                        &nbsp;
+                        Consultant
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">
@@ -53,7 +55,7 @@ const LoggedHome = () => {
                         aria-controls="allInterview" 
                         aria-selected="false"
                     >
-                        Interviews List
+                        Interviews
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">
@@ -64,8 +66,10 @@ const LoggedHome = () => {
                         role="tab" 
                         aria-controls="newInterview" 
                         aria-selected="false"
-                    >
-                        New Interview
+                    >   
+                        <i class="fas fa-plus"></i>
+                        &nbsp;
+                        Interview
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">

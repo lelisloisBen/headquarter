@@ -7,33 +7,39 @@
     background-color: white;
 }
 .tab1Color {
-    background-color: blue;
-    color: white;
+    background-color: #BBBAFF;
+    border: 1px solid white!important;
+    color: #141414;
     font-weight: bold;
 }
 .tab2Color {
-    background-color:lightblue;
-    color: white;
+    background-color:#BBBAFF;
+    border: 1px solid white!important;
+    color: #141414;
     font-weight: bold;
 }
 .tab3Color {
-    background-color: pink;
-    color: black;
+    background-color: #FFC2E2;
+    border: 1px solid white!important;
+    color: #141414;
     font-weight: bold;
 }
 .tab4Color {
-    background-color: orange;
-    color: black;
+    background-color: #F4FDB1;
+    border: 1px solid white!important;
+    color: #141414;
     font-weight: bold;
 }
 .tab5Color {
-    background-color: yellow;
-    color: black;
+    background-color: #7C8BFF;
+    border: 1px solid white!important;
+    color: #141414;
     font-weight: bold;
 }
 .tab6Color {
-    background-color: red;
-    color: white;
+    background-color: #FFC2E2;
+    border: 1px solid white!important;
+    color: #141414;
     font-weight: bold;
 }
 .btnIwash {
