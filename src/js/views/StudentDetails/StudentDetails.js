@@ -10,15 +10,14 @@ const StudentDetails = (props) => {
     // const {backen_url} = useContext(UserContext);
     // let history = useHistory();
 
+    const {windowHeight} = useContext(UserContext);
     const {studentsData} = useContext(UserContext);
 
     let StudentID = props.match.params.SID - 1;
     let S = studentsData[StudentID];
 
-    // console.log(consultantData[ConsultantID].firstname  );
-
     return (
-        <div className={styles.section}>
+        <div className={styles.section} style={{minHeight: windowHeight}}>
             <div className="container mx-auto">
                 <Link to="/">
                     <i class="fas fa-chevron-left"></i> 
