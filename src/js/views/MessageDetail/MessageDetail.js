@@ -79,11 +79,20 @@ const MessageDetail = (props) => {
 
     const messageDelete = () => {
         // console.log(messageDataDelete)
-        swal("Delete Message!", "Are you sure you want to permenently remove this message?", "success", {
-            button: "OK",
-        }).then(() => {
-                history.push('/messages');
-            });
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+         .then((willDelete) => {
+              if (willDelete) {
+                    history.push('/messages');
+              } else {
+                     swal("Your imaginary file is safe!");
+          }
+       });
     }
 
     return (
