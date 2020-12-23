@@ -53,31 +53,31 @@ const MessageDetail = (props) => {
                             </li>
 
                         </ul>
+                        <div className="row">
+                            <div className="col">
+                                {M.read_flag === 0 
+                                ?
+                                <button
+                                    className="btn btn-primary mt-3"
+                                    onClick={messageProcessing}
+                                >
+                                    Message Processed
+                                </button>
+                                : ""}
+                            </div>
+                            <div className="col">
+                                <button
+                                    className="btn btn-danger mt-3"
+                                >
+                                    Delete Message
+                                </button>
+                            </div>
+                        </div>
+                        
                         
                     </div>
                 </div>
             </div>
-
-            <div className="container">
-                <div className="row">
-                    <div className="col">
-                        <button
-                            className="btn btn-primary mt-3"
-                            onClick={messageProcessing}
-                        >
-                            Message Read and Processed
-                        </button>
-                    </div>
-                    <div className="col">
-                        <button
-                            className="btn btn-danger"
-                        >
-                            Delete Message
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
         </div>
     );
 };
