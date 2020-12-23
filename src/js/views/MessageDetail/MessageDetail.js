@@ -20,6 +20,10 @@ const MessageDetail = (props) => {
         "id": messageID,
         "read": 1
     });
+    const messageDataMarkNotRead = JSON.stringify({
+        "id": messageID,
+        "read": 0
+    });
 
     const messageProcessing = () => {
         // console.log("datas", messageData);
@@ -45,6 +49,30 @@ const MessageDetail = (props) => {
                     })
                 });
     } 
+
+    const messageAsNotRead = () => {
+        fetch('https://headquarter-backend.herokuapp.com/messageProcessed', {
+                method: 'PUT',
+                body: messageDataMarkNotRead,
+                cors: 'no-cors',
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+                }).then(res => res.json())
+                .then(response => {
+                    console.log(JSON.stringify(response));
+                    swal("MESSAGE PROCESSED!", "Message read and processed", "success", {
+                        button: "Good job boss",
+                    }).then(() => {
+                            history.push('/messages');
+                        });
+                })
+                .catch(error => {
+                    swal("Something Went Wrong!", JSON.stringify("error: => "+ error), "error", {
+                        button: "OK",
+                    })
+                });
+    }
 
     return (
         <div className={styles.section} style={{minHeight: windowHeight}}>
@@ -91,7 +119,13 @@ const MessageDetail = (props) => {
                                 >
                                     Message Processed
                                 </button>
-                                : ""}
+                                : 
+                                <button
+                                    className="btn btn-info mt-3 float-right"
+                                    onClick={messageAsNotRead}
+                                >
+                                    Mark as not read
+                                </button>}
                             </div>
                             <div className="col">
                                 <button
