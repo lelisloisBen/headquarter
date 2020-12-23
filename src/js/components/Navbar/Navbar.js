@@ -18,7 +18,7 @@ const IwashNavBar = () => {
                 <Link className="navbar-brand mobile btn btn-warning" to="/">
                     <i class="fas fa-building"></i>
                     &nbsp;
-                    <span className={styles.wash}><b>Headquarter</b></span>
+                    <span className={styles.brandName}><b>Headquarter</b></span>
                 </Link>
                 <ul className="nav navbar-nav navbar-right">
                     {!tokenAuth ?
