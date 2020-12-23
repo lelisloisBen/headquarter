@@ -17,8 +17,13 @@ const StudentDetails = (props) => {
     let StudentID = props.match.params.SID - 1;
     let S = studentsData[StudentID];
 
+    const allData = JSON.stringify({
+        "id": StudentID,
+        "course": studentcourses
+    });
+
     const submitAccess = () => {
-        console.log(studentcourses);
+        console.log(allData);
     }
 
     return (
