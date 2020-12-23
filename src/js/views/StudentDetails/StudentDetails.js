@@ -34,9 +34,34 @@ const StudentDetails = (props) => {
 
                         <select className="form-control">
                             <option selected>Give access to courses?</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option value="18">Access to all courses</option>
+                            <optgroup label="Week 1">
+                                <option value="2">Two</option>
+                            </optgroup>
+                            <optgroup label="Week 2">
+                                <option value="2">Two</option>
+                            </optgroup>
+                            <optgroup label="Week 3">
+                                <option value="2">Two</option>
+                            </optgroup>
+                            <optgroup label="Week 4">
+                                <option value="2">Two</option>
+                            </optgroup>
+                            <optgroup label="Week 5">
+                                <option value="2">Two</option>
+                            </optgroup>
+                            <optgroup label="Week 6">
+                                <option value="2">Two</option>
+                            </optgroup>
+                            <optgroup label="Week 7">
+                                <option value="2">Two</option>
+                            </optgroup>
+                            <optgroup label="Week 8">
+                                <option value="2">Two</option>
+                            </optgroup>
+                            <optgroup label="Week 9">
+                                <option value="2">Two</option>
+                            </optgroup>
                         </select>
                         
                     </div>
