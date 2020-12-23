@@ -88,7 +88,27 @@ const MessageDetail = (props) => {
           })
          .then((willDelete) => {
               if (willDelete) {
-                    history.push('/messages');
+                fetch('https://headquarter-backend.herokuapp.com/messageProcessed', {
+                    method: 'DELETE',
+                    body: messageDataDelete,
+                    cors: 'no-cors',
+                    headers:{
+                        'Content-Type': 'application/json'
+                    }
+                    }).then(res => res.json())
+                    .then(response => {
+                        console.log(JSON.stringify(response));
+                        swal("MESSAGE DELETED!", "Message will be no longer available", "success", {
+                            button: "Good job boss",
+                        }).then(() => {
+                                history.push('/messages');
+                            });
+                    })
+                    .catch(error => {
+                        swal("Something Went Wrong!", JSON.stringify("error: => "+ error), "error", {
+                            button: "OK",
+                        })
+                    });
               } else {
                      swal("Your message is safe!");
           }
