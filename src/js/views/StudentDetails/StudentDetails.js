@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../../UserContext';
 import { Link } from 'react-router-dom';
-import styles from './InterviewDetails.module.css';
+import styles from './StudentDetails.module.css';
 
 
 
@@ -10,10 +10,10 @@ const StudentDetails = (props) => {
     // const {backen_url} = useContext(UserContext);
     // let history = useHistory();
 
-    const {interviewsData} = useContext(UserContext);
+    const {studentsData} = useContext(UserContext);
 
     let StudentID = props.match.params.SID - 1;
-    let I = interviewsData[StudentID];
+    let I = studentsData[StudentID];
 
     // console.log(consultantData[ConsultantID].firstname  );
 
