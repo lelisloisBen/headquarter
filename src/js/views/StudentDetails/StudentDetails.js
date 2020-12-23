@@ -68,7 +68,13 @@ const StudentDetails = (props) => {
                             </div>
                             <div className="col">
                                 <h4 className="float-right">
-                                    {S.courses >= 5 ? "Week 1" : ""}
+                                    {S.courses <= 5 ? "Week 1" : ""}
+                                    {S.courses <= 8 ? "Week 2" : ""}
+                                    {S.courses <= 11 ? "Week 3" : ""}
+                                    {S.courses <= 13 ? "Week 4" : ""}
+                                    {S.courses <= 15 ? "Week 5" : ""}
+                                    {S.courses <= 17 ? "Week 6" : ""}
+                                    {S.courses = 18 ? "Week 8" : ""}
                                 </h4>
                             </div>
                         </div>
