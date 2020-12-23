@@ -24,6 +24,9 @@ const MessageDetail = (props) => {
         "id": messageID,
         "read": 0
     });
+    const messageDataDelete = JSON.stringify({
+        "id": messageID
+    });
 
     const messageProcessing = () => {
         // console.log("datas", messageData);
@@ -72,6 +75,10 @@ const MessageDetail = (props) => {
                         button: "OK",
                     })
                 });
+    }
+
+    const messageDelete = () => {
+        console.log(messageDataDelete)
     }
 
     return (
@@ -134,6 +141,7 @@ const MessageDetail = (props) => {
                             <div className="col">
                                 <button
                                     className="btn btn-danger mt-3"
+                                    onClick={messageDelete}
                                 >
                                     Delete Message
                                     &nbsp;
