@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../../UserContext';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 import styles from './MessageDetail.module.css';
 
 
@@ -12,10 +13,10 @@ const MessageDetail = (props) => {
 
     let MessageID = props.match.params.MID - 1;
     let M = messagesData[MessageID];
-    // const messageID = M.id
+    const messageID = M.id
 
     const messageData = JSON.stringify({
-        "id": M.id
+        "id": messageID
     });
 
     const messageProcessing = () => {
