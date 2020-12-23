@@ -89,7 +89,7 @@ const MessageDetail = (props) => {
          .then((willDelete) => {
               if (willDelete) {
                 fetch('https://headquarter-backend.herokuapp.com/messageProcessed', {
-                    method: 'DELETE',
+                    method: 'POST',
                     body: messageDataDelete,
                     cors: 'no-cors',
                     headers:{
