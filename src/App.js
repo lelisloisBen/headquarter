@@ -66,14 +66,14 @@ function App() {
       .then(res => res.json())
       .then(res => setmessagesData(res))
       .catch(error => console.log('error: ', error) );
-  })
+  }, [])
 
   useEffect(() => {
     fetch('https://headquarter-backend.herokuapp.com/countMessage')
       .then(res => res.json())
       .then(res => setcountMessagesData(res))
       .catch(error => console.log('error: ', error) );
-  })
+  }, [])
   
 
   const providerValue = useMemo(() => ({checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl, messagesData, countMessagesData }), [checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl, messagesData, countMessagesData]);
