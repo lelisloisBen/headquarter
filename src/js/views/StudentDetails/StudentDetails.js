@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../UserContext';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import swal from 'sweetalert';
 import styles from './StudentDetails.module.css';
 
 
@@ -8,7 +9,7 @@ import styles from './StudentDetails.module.css';
 const StudentDetails = (props) => {
 
     // const {backen_url} = useContext(UserContext);
-    // let history = useHistory();
+    let history = useHistory();
     const [studentcourses, setstudentcourses] = useState(0);
 
     const {windowHeight} = useContext(UserContext);
@@ -24,8 +25,28 @@ const StudentDetails = (props) => {
     });
 
     const submitAccess = () => {
-        console.log(allData);
-    }
+        fetch('https://headquarter-backend.herokuapp.com/updateCourses', {
+                method: 'POST',
+                body: allData,
+                cors: 'no-cors',
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+                }).then(res => res.json())
+                .then(response => {
+                    console.log(JSON.stringify(response));
+                    swal("UPDATED SUCCESSFULLY!", "Courses updated", "success", {
+                        button: "You are the best",
+                    }).then(() => {
+                        history.push('/');
+                        });
+                })
+                .catch(error => {
+                    swal("Something Went Wrong!", JSON.stringify("Error: "+ error), "error", {
+                        button: "OK",
+                    })
+                });
+        }
 
     return (
         <div className={styles.section} style={{minHeight: windowHeight}}>
