@@ -34,7 +34,7 @@ const StudentDetails = (props) => {
 
                         <select className="form-control">
                             <option selected>Give access to courses?</option>
-                            <option value="18">Access to all courses</option>
+                            <option value="18">FULL ACCESS (Teachers)</option>
                             <optgroup label="Week 1">
                                 <option value="1">Introduction</option>
                                 <option value="2">What is Big Data</option>
