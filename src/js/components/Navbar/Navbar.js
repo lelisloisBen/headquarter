@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../../UserContext';
 
 import styles from './Navbar.module.css';
-import vault from '../../../img/vault.png';
+// import vault from '../../../img/vault.png';
 
 const IwashNavBar = () => {
 

@@ -8,6 +8,7 @@ import vault from '../../../img/vault.png';
 
 const Login = () => {
 
+    const {windowHeight} = useContext(UserContext);
     let history = useHistory();
 
     const [email, setEmail] = useState('');
@@ -64,8 +65,8 @@ const Login = () => {
     }
 
     return (
-        <section className={styles.section} >
-                <a href="/"><img className={styles.coin} src={vault} alt="coin"/></a> 
+        <section className={styles.section} style={{minHeight: windowHeight}} >
+                <img className="my-3"  src={vault} alt="coin"/>
                 <br/>
                 <input 
                     className={styles.inputForm} 
@@ -88,10 +89,12 @@ const Login = () => {
                 <br/>
                 
                 <button 
-                    className={["btn",styles.buttLogin].join(' ')}
+                    className="btn btn-warning my-3"
                     onClick={loginFormHandler}
                 >
-                    Login
+                    <i class="fas fa-plug"></i>
+                    &nbsp;
+                    <b>Login</b>
                 </button>           
 
         </section>
