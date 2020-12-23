@@ -15,6 +15,7 @@ const consultantProfile = lazy(() => import('./js/views/ConsultantProfile/Consul
 const interviewDetails = lazy(() => import('./js/views/InterviewDetails/InterviewDetails'));
 const MessagesView = lazy(() => import('./js/views/Messages/Messages'));
 const messageDetail = lazy(() => import('./js/views/MessageDetail/MessageDetail'));
+const StudentDetails = lazy(() => import('./js/views/StudentDetails/StudentDetails'));
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
   const [checkToken, setcheckToken] = useState('');
   const [messagesData, setmessagesData] = useState();
   const [countMessagesData, setcountMessagesData] = useState();
+  const [studentsData, setstudentsDataData] = useState();
   
   const [user, setUser] = useState(null);
   const [Auth, setAuth] = useState(null);
@@ -55,6 +57,13 @@ function App() {
   },[backen_url])
 
   useEffect(() => {
+    fetch(backen_url+'/students')
+      .then(res => res.json())
+      .then(res => setstudentsDataData(res))
+      .catch(error => console.log('error: ', error) );
+  },[backen_url])
+
+  useEffect(() => {
     fetch(backen_url+'/checkToken')
       .then(res => res.json())
       .then(res => setcheckToken(res.token))
@@ -75,8 +84,37 @@ function App() {
       .catch(error => console.log('error: ', error) );
   }, [])
   
+  
 
-  const providerValue = useMemo(() => ({checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl, messagesData, countMessagesData }), [checkToken, user, setUser, Auth, setAuth, consultantData, interviewsData, backen_url, windowHeight, homeUrl, messagesData, countMessagesData]);
+  const providerValue = useMemo(() => ({
+    checkToken, 
+    user, 
+    setUser, 
+    Auth, 
+    setAuth, 
+    consultantData, 
+    interviewsData, 
+    backen_url, 
+    windowHeight, 
+    homeUrl, 
+    messagesData, 
+    countMessagesData, 
+    studentsData 
+  }), [
+    checkToken, 
+    user, 
+    setUser, 
+    Auth, 
+    setAuth, 
+    consultantData, 
+    interviewsData, 
+    backen_url, 
+    windowHeight, 
+    homeUrl, 
+    messagesData, 
+    countMessagesData, 
+    studentsData
+  ]);
 
   return (
     <Router>
@@ -91,6 +129,7 @@ function App() {
               <Route path="/interview-details/:IID" component={interviewDetails} />
               <Route path="/messages" component={MessagesView} />
               <Route path="/message-detail/:MID" component={messageDetail} />
+              <Route path="/student-details/:SID" component={StudentDetails} />
               <Route render={() => <NotFound/>} />
             </Switch>
             </section>
