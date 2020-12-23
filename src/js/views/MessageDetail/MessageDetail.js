@@ -53,6 +53,14 @@ const MessageDetail = (props) => {
                             </li>
 
                         </ul>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div className="container">
+                <div className="row">
+                    <div className="col">
                         <button
                             className="btn btn-primary mt-3"
                             onClick={messageProcessing}
@@ -60,8 +68,16 @@ const MessageDetail = (props) => {
                             Message Read and Processed
                         </button>
                     </div>
+                    <div className="col">
+                        <button
+                            className="btn btn-danger"
+                        >
+                            Delete Message
+                        </button>
+                    </div>
                 </div>
             </div>
+            
         </div>
     );
 };
