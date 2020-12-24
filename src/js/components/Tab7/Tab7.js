@@ -54,12 +54,12 @@ const Tab7 = () => {
 
     return (
         <div className="container py-5" >
-            <h1>Add Student form</h1>
+            <h1 className="text-center" >Add a consulant as Student</h1>
+            <h2 className="text-center">To give access to Datavault courses, select a consultant and submit.</h2>
 
-            <div className="form-row">
-                <div className="form-group col-md-6">
-                    <label htmlFor="inputConsultant">Consultant List</label>
-                    <select className="form-control" id="inputConsultant" onChange={(e) => setStudent(e.target.value)}>
+            <div className="row">
+                <div className="col">
+                    <select className="form-control" onChange={(e) => setStudent(e.target.value)}>
                         <option value="" defaultValue="selected">Select a Consultant</option>
                         {!consultantData ? "Empty list of consultants..." : consultantData.map((item, index) => {
                             return (
@@ -71,13 +71,19 @@ const Tab7 = () => {
                 </div>
             </div>
 
-            <button 
-                type="submit" 
-                className="btn btn-success"
-                onClick={submitForm}
-            >
-                Save Student for Courses
-            </button>
+            <div className="row">
+                <div className="col text-center">
+                    <button 
+                        type="submit" 
+                        className="btn btn-success my-3"
+                        onClick={submitForm}
+                    >
+                        Save Student for Courses
+                    </button>
+                </div>
+            </div>
+
+            
 
         </div>
     )
