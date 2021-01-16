@@ -91,6 +91,7 @@ const Login = () => {
                 <button 
                     className="btn btn-warning my-3"
                     onClick={loginFormHandler}
+                    onKeyUp={(e) => { if (e.keyCode === 13){loginFormHandler()} }}
                 >
                     <i class="fas fa-plug"></i>
                     &nbsp;
