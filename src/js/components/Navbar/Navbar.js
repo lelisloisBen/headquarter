@@ -16,7 +16,7 @@ const IwashNavBar = () => {
         <nav className={["navbar fixed-top navbar-expand-lg navbar-light", styles.navBarI].join(' ')}>
             <div className="container">
                 <Link className="navbar-brand mobile btn btn-warning" to="/">
-                    <i class="fas fa-building"></i>
+                    <i className="fas fa-building"></i>
                     &nbsp;
                     <span className={styles.brandName}><b>Headquarter</b></span>
                 </Link>
@@ -46,7 +46,7 @@ const IwashNavBar = () => {
                                 <b>
                                     LogOut
                                     &nbsp;  
-                                    <i class="fas fa-power-off"></i>
+                                    <i className="fas fa-power-off"></i>
                                 </b>
                             </button>  
                         </li>

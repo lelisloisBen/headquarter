@@ -5,6 +5,12 @@ const Tab5 = () => {
     return (
         <>
             Board of directors informations
+            <p>
+                <a className="btn btn-warning" href="http://umasterit.com/">UmasterIT</a>
+            </p>
+            <p>
+                <a className="btn btn-primary" href="http://student.umasterit.com/">Student-UmasterIT</a>
+            </p>
         </>
     )
 };

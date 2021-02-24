@@ -66,7 +66,7 @@ const Login = () => {
 
     return (
         <section className={styles.section} style={{minHeight: windowHeight}} >
-                <img className="my-3"  src={vault} alt="coin"/>
+                <img className="my-3"  src={vault} alt="logo" width="200px" height="200px" />
                 <br/>
                 <input 
                     className={styles.inputForm} 
@@ -91,7 +91,7 @@ const Login = () => {
                 <button 
                     className="btn btn-warning my-3"
                     onClick={loginFormHandler}
-                    onKeyUp={(e) => { if (e.keyCode === 13){loginFormHandler()} }}
+                    onKeyUp={(e) => { if (e.key === 'Enter'){loginFormHandler()} }}
                 >
                     <i class="fas fa-plug"></i>
                     &nbsp;
