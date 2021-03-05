@@ -3,7 +3,7 @@ import React from 'react';
 
 const Tab5 = () => {
     return (
-        <>
+        <div className="p-3">
             Board of directors informations
             <p>
                 <a 
@@ -25,7 +25,7 @@ const Tab5 = () => {
                     Student-UmasterIT
                 </a>
             </p>
-        </>
+        </div>
     )
 };
 
