@@ -85,13 +85,13 @@ const Login = () => {
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    onKeyUp={(e) => { if (e.key === 'Enter'){ loginFormHandler() }}}
                 />
                 <br/>
                 
                 <button 
                     className="btn btn-warning my-3"
                     onClick={loginFormHandler}
-                    onKeyUp={(e) => { if (e.key === 'Enter'){loginFormHandler()} }}
                 >
                     <i class="fas fa-plug"></i>
                     &nbsp;
