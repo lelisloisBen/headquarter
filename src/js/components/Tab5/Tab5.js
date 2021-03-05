@@ -6,7 +6,14 @@ const Tab5 = () => {
         <>
             Board of directors informations
             <p>
-                <a className="btn btn-warning" href="http://umasterit.com/">UmasterIT</a>
+                <a 
+                    className="btn btn-warning" 
+                    href="http://umasterit.com/"
+                    target="_blank" 
+                    rel="noreferrer"
+                >
+                    UmasterIT
+                </a>
             </p>
             <p>
                 <a 
