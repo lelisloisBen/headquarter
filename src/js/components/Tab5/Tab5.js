@@ -9,7 +9,7 @@ const Tab5 = () => {
                 <a className="btn btn-warning" href="http://umasterit.com/">UmasterIT</a>
             </p>
             <p>
-                <a className="btn btn-primary" href="http://student.umasterit.com/">Student-UmasterIT</a>
+                <a className="btn btn-primary" href="http://student.umasterit.com/" target="_blank">Student-UmasterIT</a>
             </p>
         </>
     )
