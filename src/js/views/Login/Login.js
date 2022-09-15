@@ -34,7 +34,10 @@ const Login = () => {
                 let token = response.token;
                 let email = response.email;
                 let name = response.name;
-                if (!email && !name ) {
+                console.log("Token: ", token);
+                console.log("Email: ", email);
+                console.log("Name: ", name);
+                if (!token && !email && !name ) {
                     swal("Sorry we couldn't find an account with that email.", "Try to register first.!", "error", {
                         button: "TRY AGAIN!",
                       })
