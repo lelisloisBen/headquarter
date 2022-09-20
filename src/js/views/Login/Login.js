@@ -17,14 +17,14 @@ const Login = () => {
     const {setAuth} = useContext(UserContext);
     const {backen_url} = useContext(UserContext);
     
-    console.log("Endpoint: ", backen_url+'login');
+    // console.log("Endpoint: ", backen_url+'login');
 
     const loginFormHandler = () => {
         let userLoginData = JSON.stringify({
             "email": email,
             "password": password
         });
-        fetch(backen_url+'/login', {
+        fetch(backen_url+'login', {
             method: 'POST',
             body: userLoginData,
             cors: 'no-cors',
