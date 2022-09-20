@@ -17,7 +17,7 @@ const Login = () => {
     const {setAuth} = useContext(UserContext);
     const {backen_url} = useContext(UserContext);
     
-    console.log("Endpoint: ", backen_url+'/login');
+    console.log("Endpoint: ", backen_url+'login');
 
     const loginFormHandler = () => {
         let userLoginData = JSON.stringify({
