@@ -24,7 +24,7 @@ const Login = () => {
             "email": email,
             "password": password
         });
-        fetch(backen_url+'login', {
+        fetch(backen_url+'loginDatavaultCourses', {
             method: 'POST',
             body: userLoginData,
             cors: 'no-cors',
