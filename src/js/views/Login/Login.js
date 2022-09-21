@@ -33,26 +33,22 @@ const Login = () => {
             }
             }).then(res => res.json())
             .then(response => {
-                // let token = response.token;
                 let email = response.email;
-                let name = response.name;
-                // console.log("Token: ", token);
-                console.log("Email: ", email);
-                console.log("Name: ", name);
-                if (!email && !name ) {
+                let fname = response.firstname;
+                let lname = response.lastname;
+                if (!email && !fname ) {
                     swal("Sorry we couldn't find an account with that email.", "Try to register first.!", "error", {
                         button: "TRY AGAIN!",
                       })
                     // alert("Sorry we couldn't find an account with that email.\n\n Try to register first.")
                 } else {
-                    // alert('LOGIN SUCCESSFUL');
-                    // localStorage.setItem('token', token);
                     localStorage.setItem('email', email);
-                    localStorage.setItem('name', name);
+                    localStorage.setItem('firstname', fname);
+                    localStorage.setItem('lastname', lname);
                     setAuth({
-                        // 'token': token,
                         'email': email,
-                        'name': name
+                        'firstname': fname,
+                        'lastname': lname
                     })
                     swal("LOGIN SUCCESSFUL!", "Welcome to Headquarter", "success", {
                         button: "Let's do that",
@@ -95,12 +91,10 @@ const Login = () => {
                 <br/>
                 
                 <button 
-                    className="btn btn-warning my-3"
+                    className={styles.buttLogin}
                     onClick={loginFormHandler}
                 >
-                    <i class="fas fa-plug"></i>
-                    &nbsp;
-                    <b>Login</b>
+                    <b>UIT Admin Login</b>
                 </button>           
 
         </section>

@@ -9,19 +9,19 @@ const IwashNavBar = () => {
 
     const {countMessagesData} = useContext(UserContext);
 
-    let tokenAuth = localStorage.getItem('token');
+    let emailAuth = localStorage.getItem('email');
+    let fnameAuth = localStorage.getItem('firstname');
+    let lnameAuth = localStorage.getItem('lastname');
 
     return (
         <>
         <nav className={["navbar fixed-top navbar-expand-lg navbar-light", styles.navBarI].join(' ')}>
-            <div className="container">
-                <Link className="navbar-brand mobile btn btn-warning" to="/">
-                    <i className="fas fa-building"></i>
-                    &nbsp;
-                    <span className={styles.brandName}><b>Headquarter</b></span>
+            <div className="container-fluid">
+                <Link className="navbar-brand mobile btn btn-danger text-white" to="/">
+                    <span className={styles.brandName}><b>{fnameAuth} {lnameAuth}</b></span>
                 </Link>
                 <ul className="nav navbar-nav navbar-right">
-                    {!tokenAuth ?
+                    {!emailAuth ?
                         <li>
                             {/* <Link to="/login" className={["btn", styles.btnGreen].join(' ')}> 
                                 Login
@@ -32,19 +32,19 @@ const IwashNavBar = () => {
                         <li>
                             <Link to="/messages" className="icon-wrapper">
                                 <i className="fa fa-envelope fa-2x icon-grey"></i>
-                                <span className="badge">{countMessagesData}</span>
+                                {countMessagesData === 0 ? "" :  <span className="badge">{countMessagesData}</span>}
                             </Link>
                         </li>
                         <li>
                             <button 
-                                className="btn btn-warning ml-3" 
+                                className="btn btn-danger ml-3" 
                                 onClick={async () => {
                                     localStorage.clear();
                                     window.location.href = "/";
                                 }}
                             >
                                 <b>
-                                    LogOut
+                                    Logout
                                     &nbsp;  
                                     <i className="fas fa-power-off"></i>
                                 </b>

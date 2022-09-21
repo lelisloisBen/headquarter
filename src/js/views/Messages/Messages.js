@@ -26,7 +26,12 @@ const Messages = () => {
                     return (
                         <Link 
                             key={index} 
-                            to={"/message-detail/"+item.id}
+                            to={{
+                                pathname: "/message-detail/"+item.id,
+                                state: {
+                                    messageData: item
+                                }
+                            }}
                             className = { flagg === 0 ? "list-group-item list-group-item-action not_read" : "list-group-item list-group-item-action"}
                         >
                             <b><i className="fas fa-user"></i> &nbsp; {item.full_name}</b>

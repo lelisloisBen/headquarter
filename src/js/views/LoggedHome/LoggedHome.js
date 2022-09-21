@@ -42,9 +42,8 @@ const LoggedHome = () => {
                         aria-controls="addNewConsultant" 
                         aria-selected="false"
                     >
-                        <i class="fas fa-plus"></i>
-                        &nbsp;
-                        Consultant
+                        
+                        Add consultant
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">
@@ -56,7 +55,7 @@ const LoggedHome = () => {
                         aria-controls="allInterview" 
                         aria-selected="false"
                     >
-                        Interviews
+                        Interviews List
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">
@@ -68,9 +67,7 @@ const LoggedHome = () => {
                         aria-controls="newInterview" 
                         aria-selected="false"
                     >   
-                        <i class="fas fa-plus"></i>
-                        &nbsp;
-                        Interview
+                       New Interview
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">
@@ -94,9 +91,7 @@ const LoggedHome = () => {
                         aria-controls="addStudent" 
                         aria-selected="false"
                     >   
-                        <i class="fas fa-plus"></i>
-                        &nbsp;
-                        Students
+                        Add student
                     </a>
                 </li>
                 <li className="nav-item" role="presentation">
@@ -108,7 +103,7 @@ const LoggedHome = () => {
                         aria-controls="board" 
                         aria-selected="false"
                     >
-                        Board of Directors
+                        Links
                     </a>
                 </li>
             </ul>

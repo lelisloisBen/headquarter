@@ -19,20 +19,19 @@ const StudentDetails = lazy(() => import('./js/views/StudentDetails/StudentDetai
 
 function App() {
 
-  const [homeUrl] = useState('https://iwash-react.herokuapp.com/');
+  // const [homeUrl] = useState('https://iwash-react.herokuapp.com/');
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [backen_url] = useState('https://headquarter-backend.herokuapp.com/');
   
   const [consultantData, setconsultantData] = useState();
   const [interviewsData, setinterviewsData] = useState();
-  const [checkToken, setcheckToken] = useState('');
   const [messagesData, setmessagesData] = useState();
-  const [countMessagesData, setcountMessagesData] = useState();
+  const [countMessagesData, setcountMessagesData] = useState(0);
   const [studentsData, setstudentsDataData] = useState();
   
   const [user, setUser] = useState(null);
   const [Auth, setAuth] = useState(null);
-  let tokenAuth = localStorage.getItem('token');
+  let emailAuth = localStorage.getItem('email');
 
   useEffect(() => {
     const handleResize = () => setWindowHeight(window.innerHeight);
@@ -43,51 +42,50 @@ function App() {
   },[])
 
   useEffect(() => {
-    fetch(backen_url+'/consultant')
+    fetch(backen_url+'consultant')
       .then(res => res.json())
       .then(res => setconsultantData(res))
       .catch(error => console.log('error: ', error) );
   },[backen_url])
 
   useEffect(() => {
-    fetch(backen_url+'/interviews')
+    fetch(backen_url+'interviews')
       .then(res => res.json())
       .then(res => setinterviewsData(res))
       .catch(error => console.log('error: ', error) );
   },[backen_url])
 
   useEffect(() => {
-    fetch(backen_url+'/students')
+    fetch(backen_url+'students')
       .then(res => res.json())
       .then(res => setstudentsDataData(res))
       .catch(error => console.log('error: ', error) );
   },[backen_url])
 
-  useEffect(() => {
-    fetch(backen_url+'/checkToken')
-      .then(res => res.json())
-      .then(res => setcheckToken(res.token))
-      .catch(error => console.log('error: ', error) );
-  })
+  // useEffect(() => {
+  //   fetch(backen_url+'/checkToken')
+  //     .then(res => res.json())
+  //     .then(res => setcheckToken(res.token))
+  //     .catch(error => console.log('error: ', error) );
+  // })
 
   useEffect(() => {
-    fetch('https://headquarter-backend.herokuapp.com/allWebsiteMessages')
+    fetch(backen_url+'allWebsiteMessages')
       .then(res => res.json())
       .then(res => setmessagesData(res))
       .catch(error => console.log('error: ', error) );
-  }, [])
+  }, [backen_url])
 
   useEffect(() => {
-    fetch('https://headquarter-backend.herokuapp.com/countMessage')
+    fetch(backen_url+'countMessage')
       .then(res => res.json())
       .then(res => setcountMessagesData(res))
       .catch(error => console.log('error: ', error) );
-  }, [])
-  
+    }, [backen_url])
+    
   
 
   const providerValue = useMemo(() => ({
-    checkToken, 
     user, 
     setUser, 
     Auth, 
@@ -96,12 +94,10 @@ function App() {
     interviewsData, 
     backen_url, 
     windowHeight, 
-    homeUrl, 
     messagesData, 
     countMessagesData, 
     studentsData 
   }), [
-    checkToken, 
     user, 
     setUser, 
     Auth, 
@@ -110,7 +106,6 @@ function App() {
     interviewsData, 
     backen_url, 
     windowHeight, 
-    homeUrl, 
     messagesData, 
     countMessagesData, 
     studentsData
@@ -120,10 +115,10 @@ function App() {
     <Router>
       <UserContext.Provider value={providerValue}>
         <Suspense fallback={<div>Loading...</div>}>
-          <HeadquarterNav/>
+        {(emailAuth === "" || emailAuth === null) ? "" : <HeadquarterNav/>}
           <section style={{minHeight: windowHeight}}>
             <Switch>
-              {(tokenAuth !== checkToken) ? <Route exact path="/" component={Login} /> : <Route exact path="/" component={LoggedHome}/> }
+              {(emailAuth === "" || emailAuth === null) ? <Route exact path="/" component={Login} /> : <Route exact path="/" component={LoggedHome}/> }
               <Route path="/login" component={Login} />
               <Route path="/consultant-profile/:CID" component={consultantProfile} />
               <Route path="/interview-details/:IID" component={interviewDetails} />

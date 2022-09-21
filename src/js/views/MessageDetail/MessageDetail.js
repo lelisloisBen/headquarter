@@ -4,28 +4,23 @@ import { Link, useHistory } from 'react-router-dom';
 import swal from 'sweetalert';
 import styles from './MessageDetail.module.css';
 
-
-
 const MessageDetail = (props) => {
 
     const {windowHeight} = useContext(UserContext);
-    const {messagesData} = useContext(UserContext);
     let history = useHistory();
 
-    let MessageID = props.match.params.MID - 1;
-    let M = messagesData[MessageID];
-    const messageID = M.id
+    let M = props.location.state.messageData;
 
     const messageData = JSON.stringify({
-        "id": messageID,
+        "id": M.id,
         "read": 1
     });
     const messageDataMarkNotRead = JSON.stringify({
-        "id": messageID,
+        "id": M.id,
         "read": 0
     });
     const messageDataDelete = JSON.stringify({
-        "id": messageID
+        "id": M.id
     });
 
     const messageProcessing = () => {
@@ -119,7 +114,7 @@ const MessageDetail = (props) => {
         <div className={styles.section} style={{minHeight: windowHeight}}>
             <div className="container mx-auto">
                 <Link to="/messages">
-                    <i class="fas fa-chevron-left"></i> 
+                    <i className="fas fa-chevron-left"></i> 
                     &nbsp; Back
                 </Link>
 
@@ -160,7 +155,7 @@ const MessageDetail = (props) => {
                                 >
                                     Message Processed 
                                     &nbsp;
-                                    <i class="fas fa-check"></i>
+                                    <i className="fas fa-check"></i>
                                 </button>
                                 : 
                                 <button
@@ -169,7 +164,7 @@ const MessageDetail = (props) => {
                                 >
                                     Mark as not read
                                     &nbsp;
-                                    <i class="fas fa-ban"></i>
+                                    <i className="fas fa-ban"></i>
                                 </button>}
                             </div>
                             <div className="col">
@@ -179,7 +174,7 @@ const MessageDetail = (props) => {
                                 >
                                     Delete Message
                                     &nbsp;
-                                    <i class="fas fa-trash-alt"></i>
+                                    <i className="fas fa-trash-alt"></i>
                                 </button>
                             </div>
                         </div>

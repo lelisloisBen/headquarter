@@ -21,9 +21,9 @@ const Tab2 = () => {
     const [c_workEmail, setc_workEmail] = useState('');
     const [c_phone, setc_phone] = useState('');
     const [c_skypeID, setc_skypeID] = useState('');
-    const [c_bank, setc_bank] = useState('');
-    const [c_routing, setc_routing] = useState('');
-    const [c_account, setc_account] = useState('');
+    const [ssn, setSsn] = useState('');
+    const [trainingStartDate, setTrainingStartDate] = useState('');
+    const [cohortNumber, setCohortNumber] = useState('');
 
     const days = [];
     for (let i=1; i<32; i++) {
@@ -50,13 +50,13 @@ const Tab2 = () => {
         "emailWork": c_workEmail,
         "phone": c_phone,
         "skype": c_skypeID,
-        "bankName": c_bank,
-        "routing": c_routing,
-        "account": c_account
+        "last4ssn": ssn,
+        "trainingstart": trainingStartDate,
+        "cohort": cohortNumber
     });
 
     const submitForm = () => {
-        if ( !consultantfirstName || !consultantlastName || !FullBirthdate || !c_gender || !c_address || !c_city || !c_state || !c_zip || !c_persEmail || !c_workEmail || !c_phone || !c_skypeID || !c_bank || !c_routing || !c_account ) {
+        if ( !consultantfirstName || !consultantlastName || !FullBirthdate || !c_gender || !c_address || !c_city || !c_state || !c_zip || !c_persEmail || !c_workEmail || !c_phone || !c_skypeID || !ssn || !trainingStartDate || !cohortNumber ) {
             setmsgError("Please Check all the field, something is missing !")
         } else {
             setmsgError('');
@@ -279,7 +279,7 @@ const Tab2 = () => {
                         type="email" 
                         className="form-control" 
                         id="inputConsultantEmail" 
-                        placeholder="firstname.lastname@datavault.com"
+                        placeholder="firstname.lastname@umasterit.com"
                         value={c_workEmail} 
                         onChange={(e) => setc_workEmail(e.target.value)}
                     />
@@ -318,38 +318,39 @@ const Tab2 = () => {
 
             <div className="form-row">
                 <div className="form-group col-md-4">
-                    <label htmlFor="bank">Bank Name</label>
+                    <label htmlFor="ssn">Last Digit SSN</label>
                     <input 
                         className="form-control" 
                         type="text" 
-                        id="bank" 
-                        placeholder="Chase Bank"
-                        value={c_bank} 
-                        onChange={(e) => setc_bank(e.target.value)}
+                        id="ssn" 
+                        placeholder="1234"
+                        maxLength="4"
+                        value={ssn} 
+                        onChange={(e) => setSsn(e.target.value)}
                     />
                 </div>
                 <div className="form-group col-md-4">
-                    <label htmlFor="bankRouting">Routing Number</label>
+                    <label htmlFor="trainingStartDate">Training Start Date</label>
                     <input 
                         className="form-control" 
                         type="text" 
-                        id="bankRouting" 
-                        placeholder="267084131"
-                        maxLength="12"
-                        value={c_routing} 
-                        onChange={(e) => setc_routing(e.target.value)}
+                        id="trainingStartDate" 
+                        placeholder="MM/DD/YYYY"
+                        maxLength="10"
+                        value={trainingStartDate} 
+                        onChange={(e) => setTrainingStartDate(e.target.value)}
                     />
                 </div>
                 <div className="form-group col-md-4">
-                    <label htmlFor="bankAccount">Account Number</label>
+                    <label htmlFor="cohortNumber">Cohort Number</label>
                     <input 
                         className="form-control" 
                         type="text" 
-                        id="bankAccount" 
-                        placeholder="000034986475"
+                        id="cohortNumber" 
+                        placeholder="004"
                         maxLength="12"
-                        value={c_account} 
-                        onChange={(e) => setc_account(e.target.value)}
+                        value={cohortNumber} 
+                        onChange={(e) => setCohortNumber(e.target.value)}
                     />
                 </div>
             </div>

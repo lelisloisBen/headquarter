@@ -1,29 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-// import { useHistory } from 'react-router-dom';
-import { UserContext } from '../../../UserContext';
 import styles from './ConsultantProfile.module.css';
-// import swal from 'sweetalert';
-
 
 
 const ConsultantProfile = (props) => {
 
-    // const {backen_url} = useContext(UserContext);
-    // let history = useHistory();
+    // console.log(props.location.state.data);
 
-    const {consultantData} = useContext(UserContext);
-
-    let ConsultantID = props.match.params.CID - 1;
-    let C = consultantData[ConsultantID];
-
-    // console.log(consultantData[ConsultantID].firstname  );
-
+    let C = props.location.state.consultantDetailData;
+    
     return (
         <div className={styles.section}>
             <div className="container mx-auto">
                 <Link to="/">
-                    <i class="fas fa-chevron-left"></i> 
+                    <i className="fas fa-chevron-left"></i> 
                     &nbsp; Back
                 </Link>
 
@@ -64,11 +54,13 @@ const ConsultantProfile = (props) => {
                             </li>
 
                             <li className="list-group-item">
-                                <b>Bank Name: </b> {C.bankName} 
-                                <br/>
-                                <b>Account Number: </b> {C.account} 
-                                <br/>
-                                <b>Routing Number: </b> {C.routing}
+                                <b>Last 4 Digit SSN: </b> {C.last4ssn} 
+                            </li>
+                            <li className="list-group-item">
+                                <b>Started Training on: </b> {C.trainingstart} 
+                            </li>
+                            <li className="list-group-item">
+                                <b>Cohort: </b> {C.cohort}
                             </li>
                             
                         </ul>

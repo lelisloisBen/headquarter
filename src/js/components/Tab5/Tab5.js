@@ -10,7 +10,7 @@ const Tab5 = () => {
                     className="btn btn-warning" 
                     href="http://umasterit.com/"
                     target="_blank" 
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                 >
                     UmasterIT
                 </a>
@@ -20,7 +20,7 @@ const Tab5 = () => {
                     className="btn btn-primary" 
                     href="http://student.umasterit.com/" 
                     target="_blank" 
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                 >
                     Student-UmasterIT
                 </a>

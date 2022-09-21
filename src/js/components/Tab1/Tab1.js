@@ -21,7 +21,12 @@ const Tab1 = () => {
                     return (
                         <Link 
                             key={index} 
-                            to={"/consultant-profile/"+item.id}
+                            to={{
+                                pathname: "/consultant-profile/"+item.id,
+                                state: {
+                                    consultantDetailData: item
+                                }
+                            }}
                             className="list-group-item list-group-item-action"
                         >
                             <b><i className="fas fa-user"></i> &nbsp; {item.firstname} {item.lastname}</b>
