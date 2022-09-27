@@ -37,6 +37,7 @@ const Tab3 = () => {
     const c_ConsultantLastName = splitedCosultant[1];
     const c_ConsultantEmail = splitedCosultant[2];
     
+    let escapedJD = encodeURIComponent(JD)
 
     const allData = JSON.stringify({
         "c_firstname": c_ConsultantFirstName,
@@ -54,7 +55,7 @@ const Tab3 = () => {
         "Manager": Manager,
         "LiveCoding": LiveCoding,
         "PositionTitle": PositionTitle,
-        "JD": JD,
+        "JD": escapedJD,
         "ProjectDuration": ProjectDuration,
         "ProjectLocation": ProjectLocation,
         "ClientWebsite": ClientWebsite,
@@ -97,7 +98,7 @@ const Tab3 = () => {
         } else {
             setmsgError('');
             // console.log(allData);
-            fetch(backen_url+'/newInterview', {
+            fetch(backen_url+'addInterviewAll', {
                 method: 'POST',
                 body: allData,
                 cors: 'no-cors',
@@ -164,7 +165,7 @@ const Tab3 = () => {
                     class="form-control"
                     id="inputClient"
                     name="Client"
-                    placeholder="Google"
+                    placeholder="Client Name"
                     thevalue={Client} 
                     thechange={(e) => setClient(e.target.value)}
                 />
@@ -176,7 +177,7 @@ const Tab3 = () => {
                     class="form-control"
                     id="inputVendor"
                     name="Vendor"
-                    placeholder="iData"
+                    placeholder="Vendor Name"
                     thevalue={Vendor} 
                     thechange={(e) => setVendor(e.target.value)}
                 />
