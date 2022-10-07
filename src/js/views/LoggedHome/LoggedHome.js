@@ -12,6 +12,7 @@ import Tab4 from '../../components/Tab4/Tab4';
 import Tab5 from '../../components/Tab5/Tab5';
 import Tab6 from '../../components/Tab6/Tab6';
 import Tab7 from '../../components/Tab7/Tab7';
+import Calendar from '../../components/Calendar/calendar';
 
 const LoggedHome = () => {
 
@@ -106,6 +107,18 @@ const LoggedHome = () => {
                         Links
                     </a>
                 </li>
+                <li className="nav-item" role="presentation">
+                    <a  className={["nav-link", styles.tab5Color].join(' ')} 
+                        id="calendar-tab" 
+                        data-toggle="tab" 
+                        href="#calendar" 
+                        role="tab" 
+                        aria-controls="calendar" 
+                        aria-selected="false"
+                    >
+                        Calendar
+                    </a>
+                </li>
             </ul>
 
             <div className={["tab-content", styles.tabContent].join(' ')} id="myTabContent">
@@ -172,6 +185,17 @@ const LoggedHome = () => {
                 >
                     <Tab5/>
                 </div>
+
+                <div 
+                    className="tab-pane fade" 
+                    id="calendar" 
+                    role="tabpanel" 
+                    aria-labelledby="calendar-tab"
+                >
+                    <Calendar/>
+                </div>
+
+                
 
             </div> 
 

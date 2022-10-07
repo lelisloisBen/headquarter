@@ -1,6 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from '../../../UserContext';
 import swal from 'sweetalert';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css"
+// https://reactdatepicker.com/
 
 import FormInput from '../FormInput/FormInput';
 
@@ -12,6 +15,7 @@ const Tab3 = () => {
 
     const [c_Consultant, setc_Consultant] = useState('Select a Consultant');
     const [Time, setTime] = useState('');
+    // const [iDate, setiDate] = useState('');
     const [Client, setClient] = useState('');
     const [Vendor, setVendor] = useState('');
     const [ImplementationPartner, setImplementationPartner] = useState('');
@@ -141,18 +145,20 @@ const Tab3 = () => {
                         }
                     </select>
                 </div>
-                <FormInput
-                    col="col-md-6"
-                    for="inputTime"
-                    labelName="Interview Time *"
-                    type="text"
-                    class="form-control"
-                    id="inputTime"
-                    name="time"
-                    placeholder="november 12th 2020 at 4pm"
-                    thevalue={Time} 
-                    thechange={(e) => setTime(e.target.value)}
-                />
+                <div className="form-group col-md-6">
+                    <label htmlFor="inputTime">Interview Date/Time *</label>
+                    <DatePicker
+                        className="form-control"
+                        showTimeSelect
+                        dateFormat="MMMM d, yyyy h:mm aa"
+                        id="inputTime"   
+                        name="date"
+                        selected={Time}
+                        onChange={date => setTime(date)}
+                    />
+                </div>
+                
+                
             </div>
 
             <div className="form-row">
